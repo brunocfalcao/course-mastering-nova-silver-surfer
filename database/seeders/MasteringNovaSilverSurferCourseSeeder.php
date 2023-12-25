@@ -44,6 +44,8 @@ class MasteringNovaSilverSurferCourseSeeder extends Seeder
             'password' => bcrypt('password'),
         ]);
 
+        $admin->variants()->attach($variant->id);
+
         // Now, lets create some chapters, series and videos.
         $chapter1 = Chapter::create([
             'name' => "What's new on the Silver Surfer version",
