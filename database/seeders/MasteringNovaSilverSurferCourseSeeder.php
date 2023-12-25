@@ -10,7 +10,6 @@ use Eduka\Cube\Models\User;
 use Eduka\Cube\Models\Variant;
 use Eduka\Cube\Models\Video;
 use Illuminate\Database\Seeder;
-use Illuminate\Support\Str;
 
 class MasteringNovaSilverSurferCourseSeeder extends Seeder
 {
@@ -30,7 +29,7 @@ class MasteringNovaSilverSurferCourseSeeder extends Seeder
             'canonical' => 'mastering-nova-silver-surfer',
             'description' => 'Mastering Nova Silver Surfer version',
             'course_id' => $course->id,
-            'lemon_squeezy_variant_id' => env('MS_SS_VARIANT_ID')
+            'lemon_squeezy_variant_id' => env('MN_SS_VARIANT_ID'),
         ]);
 
         $domain = Domain::create([
