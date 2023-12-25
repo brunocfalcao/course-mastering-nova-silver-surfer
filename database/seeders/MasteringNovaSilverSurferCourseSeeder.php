@@ -26,6 +26,13 @@ class MasteringNovaSilverSurferCourseSeeder extends Seeder
             'lemon_squeezy_store_id' => env('LEMON_SQUEEZY_STORE_ID'),
         ]);
 
+        $variant = Variant::create([
+            'canonical' => 'mastering-nova-silver-surfer',
+            'description' => 'Mastering Nova Silver Surfer version',
+            'course_id' => $course->id,
+            'lemon_squeezy_variant_id' => env('MS_SS_VARIANT_ID')
+        ]);
+
         $domain = Domain::create([
             'name' => env('MN_SS_DOMAIN'),
             'course_id' => $course->id,
