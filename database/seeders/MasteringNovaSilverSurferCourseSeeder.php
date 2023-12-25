@@ -14,54 +14,33 @@ use Illuminate\Support\Str;
 
 class MasteringNovaSilverSurferCourseSeeder extends Seeder
 {
-    private static $videoIndex = 0;
-
-    public function run(): void
+    public function run()
     {
         $course = Course::create([
-            'name' => 'Mastering Nova - Silver Surfer version',
+            'name' => 'Mastering Nova - Silver Surfer',
             'canonical' => 'course-mastering-nova-silver-surfer',
             'admin_name' => 'Bruno Falcao',
-            'admin_email' => env('MASTERING_NOVA_EMAIL'),
-            'twitter_handle' => env('MASTERING_NOVA_TWITTER'),
-            'provider_namespace' => 'MasteringNova\\MasteringNovaServiceProvider',
+            'admin_email' => env('MN_SS_EMAIL'),
+            'twitter_handle' => env('MN_SS_TWITTER'),
+            'provider_namespace' => 'MasteringNovaSilverSurfer\\MasteringNovaSilverSurferServiceProvider',
             'lemon_squeezy_store_id' => env('LEMON_SQUEEZY_STORE_ID'),
         ]);
 
-        // Full course variant.
-        $variantFull = Variant::create([
-            'uuid' => (string) Str::uuid(),
-            'canonical' => 'mastering-nova-silver-surfer-full',
-            'course_id' => $course->id,
-            'description' => 'Full videos + 1h consulting',
-            'lemon_squeezy_variant_id' => env('MASTERING_NOVA_MAIN_VARIANT_FULL_COURSE_ID'),
-            'lemon_squeezy_price_override' => env('MASTERING_NOVA_MAIN_VARIANT_FULL_COURSE_PRICE'),
-        ]);
-
-        // Just videos variant.
-        $variantVideos = Variant::create([
-            'uuid' => (string) Str::uuid(),
-            'canonical' => 'mastering-nova-silver-surfer-videos-only',
-            'course_id' => $course->id,
-            'description' => 'Full videos (no consulting)',
-            'lemon_squeezy_variant_id' => env('MASTERING_NOVA_MAIN_VARIANT_JUST_VIDEOS_ID'),
-        ]);
-
         $domain = Domain::create([
-            'name' => env('MASTERING_NOVA_DOMAIN'),
+            'name' => env('MN_SS_DOMAIN'),
             'course_id' => $course->id,
         ]);
 
         // Create admin user.
         $admin = User::create([
-            'name' => 'Bruno Falcao (MS)',
-            'email' => env('MASTERING_NOVA_EMAIL'),
+            'name' => 'Bruno Falcao (SS)',
+            'email' => env('MN_SS_EMAIL'),
             'password' => bcrypt('password'),
         ]);
 
         // Now, lets create some chapters, series and videos.
         $chapter1 = Chapter::create([
-            'name' => "What's news on the Silver Surfer version",
+            'name' => "What's new on the Silver Surfer version",
             'description' => "Let's deep dive just in the new features that this new version brings, and I can say you will be amazed on how much the Laravel Nova team heard about what the community was asking for",
             'course_id' => 1,
         ]);
@@ -74,22 +53,22 @@ class MasteringNovaSilverSurferCourseSeeder extends Seeder
 
         // Add 2 videos to each chapter.
         $video1 = Video::create([
-            'name' => 'Video 1 / Chapter 1 from Mastering Nova',
+            'name' => 'Video 1 / Chapter 1 from Mastering Nova Silver Surfer',
             'created_by' => 1,
         ])->chapters()->attach($chapter1->id, ['index' => 1]);
 
         $video2 = Video::create([
-            'name' => 'Video 2 / Chapter 1 from Mastering Nova',
+            'name' => 'Video 2 / Chapter 1 from Mastering Nova Silver Surfer',
             'created_by' => 1,
         ])->chapters()->attach($chapter1->id, ['index' => 2]);
 
         $video3 = Video::create([
-            'name' => 'Video 3 / Chapter 2 from Mastering Nova',
+            'name' => 'Video 3 / Chapter 2 from Mastering Nova Silver Surfer',
             'created_by' => 1,
         ])->chapters()->attach($chapter1->id, ['index' => 1]);
 
         $video4 = Video::create([
-            'name' => 'Video 4 / Chapter 2 from Mastering Nova',
+            'name' => 'Video 4 / Chapter 2 from Mastering Nova Silver Surfer',
             'created_by' => 1,
         ])->chapters()->attach($chapter1->id, ['index' => 2]);
 
