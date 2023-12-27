@@ -42,6 +42,7 @@ class MasteringNovaSilverSurferCourseSeeder extends Seeder
             'name' => 'Bruno Falcao (SS)',
             'email' => env('MN_SS_EMAIL'),
             'password' => bcrypt('password'),
+            'is_admin' => true,
         ]);
 
         $admin->variants()->attach($variant->id);
