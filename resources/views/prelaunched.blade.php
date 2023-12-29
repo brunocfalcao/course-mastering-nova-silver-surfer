@@ -14,10 +14,11 @@ style="
 
     @include('course::prelaunched.content')
 
+    @include('course::prelaunched.partials.flare')
     @include('course::prelaunched.get-access')
+    @include('course::prelaunched.partials.flare')
 
     @include('course::prelaunched.footer')
-
 </div>
 @endsection
 

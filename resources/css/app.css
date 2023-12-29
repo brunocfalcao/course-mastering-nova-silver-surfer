@@ -1,7 +1,18 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@keyframes gradient {
+  0% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0 50%;
+  }
+}
 
+.hover\:animate-gradient:hover {
+  animation: gradient 1s ease infinite;
+}
 /* @resources/assets */
 @layer utilities {
   .border-gradient {
@@ -23,4 +34,5 @@
     display: inline-block;
   }
 }
+
 /* @end-course-mastering-nova-silver-surfer */

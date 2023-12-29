@@ -1,4 +1,4 @@
-<div class="w-full my-20">
+<div class="w-full my-10 py-10">
     <div class="max-w-7xl mx-auto px-[4.5rem]">
         <div class="w-full flex flex-col-reverse md:flex-row justify-between">
             <div class="flex flex-row justify-center md:justify-start items-center">
@@ -11,12 +11,6 @@
                 <a href="#" class="hover:underline">
                     Contact
                 </a>
-                <span class="hidden md:block">|</span>
-                <a href="#" class="hover:underline">
-                    Privacy and Cookie Policy
-                </a>
-                <span class="hidden md:block">|</span>
-                <a href="#" class="hover:underline">Terms of Usage</a>
                 <span class="hidden md:block">|</span>
                 <a href="#" class="hover:underline">Twitter</a>
             </div>

@@ -21,6 +21,7 @@ module.exports = {
             colors : {
                 "primary-black": "#101010",
                 "deep-soft-blue": "#272E44",
+                "bright-blue" : "#56D7FE",
                 // Gray based color.
                 'gray-dark-900': '#1C242E',
             },

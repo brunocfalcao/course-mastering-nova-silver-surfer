@@ -15,10 +15,9 @@
             Medium, rare, but mostly well-done HTML email components.
         </div>
         <div class="progress-area flex flex-col md:flex-row space-y-8 md:space-y-0 md:space-x-8 mt-8 px-2 md:px-0">
-
             @include('course::prelaunched.partials.progress')
-            @include('course::prelaunched.partials.expected-launch-date')
 
+            @include('course::prelaunched.partials.expected-launch-date')
         </div>
 
         <div class="px-4 md:px-0 mt-6 text-white pt-4 flex flex-col">
@@ -28,4 +27,5 @@
         </div>
 
     </div>
+
 </div>
