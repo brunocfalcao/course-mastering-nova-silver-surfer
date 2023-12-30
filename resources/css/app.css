@@ -2,37 +2,50 @@
 @tailwind components;
 @tailwind utilities;
 @keyframes gradient {
-  0% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0 50%;
-  }
+    0% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0 50%;
+    }
 }
 
 .hover\:animate-gradient:hover {
-  animation: gradient 1s ease infinite;
+    animation: gradient 1s ease infinite;
 }
+
 /* @resources/assets */
 @layer utilities {
-  .border-gradient {
-    border-width: 1px;
-    border-style: solid;
-    border-image: linear-gradient(135deg, #00ffc4 0%, #56d7fe 100%);
-    border-image-slice: 1;
-  }
+    .border-gradient {
+        border-width: 1px;
+        border-style: solid;
+        border-image: linear-gradient(135deg, #00ffc4 0%, #56d7fe 100%);
+        /*border-image-slice: 1;*/
+    }
 }
 
 /* In your CSS or in your Tailwind CSS configuration */
 @layer utilities {
-  .text-gradient {
-    position: relative;
-    background: linear-gradient(135deg, #00ffc4 0%, #56d7fe 100%);
-    background-clip: text;
-    -webkit-background-clip: text; /* For Safari */
-    color: transparent;
-    display: inline-block;
-  }
+    .text-gradient {
+        position: relative;
+        background: linear-gradient(135deg, #00ffc4 0%, #56d7fe 100%);
+        background-clip: text;
+        -webkit-background-clip: text; /* For Safari */
+        color: transparent;
+        display: inline-block;
+    }
+}
+
+.progress-incomplete {
+    stroke: #39393A; /* Cyan-500 */
+}
+
+.progress-completed {
+    stroke: #2DD4BF; /* Cyan-500 */
+}
+
+.progress-font {
+    background: linear-gradient(135deg, #00FFC4 0%, #56D7FE 100%);
 }
 
 /* @end-course-mastering-nova-silver-surfer */

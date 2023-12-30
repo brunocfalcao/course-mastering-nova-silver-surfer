@@ -1,6 +1,13 @@
 @extends('course::layouts.prelaunched')
 
-@section('title', 'Mastering Nova by Bruno C. Falcao')
+@section('title', $course->meta_title ?? $course->name)
+
+@push('metatags')
+    <meta name="description" content="{{ $course->meta_description }}">
+    <meta name="author" content="{{ $course->admin_name }}">
+    <link rel="canonical" href="https://silver-surfer.masteringnova.com/" />
+    <meta name="twitter:site" content="{{ '@' . $course->meta_twitter_alias }}" />
+@endpush
 
 @section('content')
 <div class="w-full mx-auto justify-center min-h-screen flex flex-col bg-primary-black text-white"
@@ -21,24 +28,3 @@ style="
     @include('course::prelaunched.footer')
 </div>
 @endsection
-
-@push('scripts')
-<script>
-    function calculateDashOffset(percentage) {
-        const circumference = 2 * Math.PI * 40; // Circumference of the circle
-        const progress = (100 - percentage) / 100; // Calculate the remaining progress
-        return progress * circumference;
-    }
-
-    // Add this script to handle dynamic dash offset calculation
-    document.addEventListener('DOMContentLoaded', function() {
-
-        const progressCircle = document.querySelector('.progress-ring__circle');
-        const textElement = document.querySelector('text');
-
-        // Set initial dash offset based on the percentage
-        progressCircle.setAttribute('stroke-dashoffset', calculateDashOffset(20));
-        textElement.innerHTML = '10%'; // Update text
-    });
-</script>
-@endpush
