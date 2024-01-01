@@ -3,7 +3,7 @@
         <div class="w-full flex flex-row mt-20 shadow-xl">
             <div class="w-3/6 h-[32rem] bg-cover bg-start object-scale-up rounded-tl-lg rounded-bl-lg mt-0 z-10
             -mx-[2rem] md:-mx-[5rem] lg:-mx-[8rem]"
-                 style="background-image: url({{ Vite::image('prelaunched-image.png') }})">
+                 style="background-image: url({{ Vite::image('prelaunched-image.png') }} )">
             </div>
 
             <div class="w-full h-[32rem] bg-cover bg-center"
