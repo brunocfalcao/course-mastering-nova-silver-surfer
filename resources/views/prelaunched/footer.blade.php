@@ -7,7 +7,7 @@
                     masteringnova
                 </span>
             </a>
-            <div class="space-x-1 py-4   leadning-normal tracking-tighter text-lg flex flex-col md:flex-row items-center">
+            <div class="space-x-1 py-4 leadning-normal tracking-tighter text-lg flex flex-col md:flex-row items-center">
                 <a href="#" class="hover:underline">
                     Contact
                 </a>

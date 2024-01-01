@@ -1,6 +1,31 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+html {
+    scroll-behavior: smooth;
+    transition-delay: 0.75s;
+}
+
+#scroll-to-top-button {
+    display: none;
+    position: fixed;
+    bottom: 20px;
+    right: 30px;
+    z-index: 99;
+    font-size: 18px;
+    border: none;
+    outline: none;
+    background-color: #2DD4BF;
+    color: white;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+#scroll-to-top-button:hover {
+    background-color: #555;
+}
+
 @keyframes gradient {
     0% {
         background-position: 100% 50%;
@@ -37,11 +62,11 @@
 }
 
 .progress-incomplete {
-    stroke: #39393A; /* Cyan-500 */
+    stroke: #39393A;
 }
 
 .progress-completed {
-    stroke: #2DD4BF; /* Cyan-500 */
+    stroke: #2DD4BF;
 }
 
 .progress-font {
