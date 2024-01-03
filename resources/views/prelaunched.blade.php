@@ -21,15 +21,12 @@ style="
 
     @include('course::prelaunched.content')
 
-    <div class="w-full py-10 flex justify-center">
-        <button onclick="scrollToBottom()" class="flex">
+    <div class="w-full pb-10 flex justify-center">
+        <button id="scroll-to-bottom-button" onclick="scrollToBottom()"
+                class="opacity-100 transition-opacity duration-500 ease-in-out bg-teal-100/50 text-black p-1 rounded-full animate-bounce">
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 13.5 12 21m0 0-7.5-7.5M12 21V3" />
             </svg>
-
-            <span class="ml-3">
-                Scroll to bottom
-            </span>
         </button>
     </div>
 

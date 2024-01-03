@@ -16,19 +16,21 @@
     <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
     <meta name="msapplication-TileColor" content="#da532c">
     <meta name="theme-color" content="#ffffff">
-    
+
     @vite('resources/css/app.css')
     @stack('styles')
-
 </head>
 
-<body class="antialiased">
+<body class="antialiased max-h-scr">
 
 <button onclick="scrollToTop()" id="scroll-to-top-button" title="Scroll to top"
-        class="fixed bottom-20 right-30 z-99 text-white text-2xl bg-teal-500 px-4 py-1 rounded-md"
->
-    Scroll to top
+        class="fixed bottom-20 right-20 z-99 bg-teal-100/50 text-black p-1 rounded-full">
+    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+         class="w-6 h-6">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 10.5 12 3m0 0 7.5 7.5M12 3v18"/>
+    </svg>
 </button>
+
 
 @yield('content')
 
@@ -37,8 +39,9 @@
 <script>
     let scrollToTopButton = document.getElementById("scroll-to-top-button");
 
-    // When the user scrolls down 20px from the top of the document, show the button
-    window.onscroll = function() {scrollFunction()};
+    window.onscroll = function () {
+        scrollFunction()
+    };
 
     function scrollFunction() {
         if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
@@ -48,6 +51,18 @@
         }
     }
 
+    window.addEventListener('scroll', function () {
+        const targetPoint = (2 / 5) * window.innerHeight
+        let scrollToBottomButton = document.getElementById('scroll-to-bottom-button')
+
+        if (window.scrollY >= targetPoint) {
+            scrollToBottomButton.classList.add('opacity-0',);
+            scrollToBottomButton.classList.remove('opacity-100');
+        } else {
+            scrollToBottomButton.classList.remove('opacity-0',);
+            scrollToBottomButton.classList.add('opacity-100',);
+        }
+    });
 
     function scrollToTop() {
         document.body.scrollTop = 0;
