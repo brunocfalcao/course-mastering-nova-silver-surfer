@@ -8,7 +8,7 @@
         </p>
     </div>
     <div class="w-full md:w-4/12 px-4 md:px-4 flex flex-row items-center space-x-2 justify-center md:justify-end">
-        <button class="w-full py-3 px-14 text-lg bg-gradient-to-r from-teal-400 to-sky-500 hover:animate-gradient rounded capitalize text-black hover:text-white font-medium">
+        <button class="hover:text-white w-full py-3 px-14 text-lg bg-gradient-to-r from-teal-400 to-sky-500 hover:animate-gradient rounded capitalize text-black font-medium">
             Get Access
         </button>
     </div>

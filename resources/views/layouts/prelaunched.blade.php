@@ -9,11 +9,11 @@
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Titillium+Web:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700&display=swap');
     </style>
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-    <link rel="manifest" href="/site.webmanifest">
-    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+    <link rel="apple-touch-icon" sizes="180x180" href="{{ Vite::image('favicons/apple-touch-icon.png') }}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{{ Vite::image('favicons/favicon-32x32.png') }}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{{ Vite::image('favicons/favicon-16x16.png') }}">
+    <link rel="mask-icon" href="{{ Vite::image('favicons/safari-pinned-tab.svg" color="#5bbad5') }}">
+    <link rel="manifest" href="{{ Vite::image('favicons/site.webmanifest') }}">
     <meta name="msapplication-TileColor" content="#da532c">
     <meta name="theme-color" content="#ffffff">
 
@@ -64,6 +64,7 @@
     function scrollToBottom() {
         window.scrollTo(0, document.body.scrollHeight);
     }
+
 
     function createCircularProgress(
         wrapper,
@@ -231,6 +232,7 @@
         progressRing.style.height = "100%";
         progressRing.style.transform = "rotate(-90deg)";
     }
+
 </script>
 
 </body>

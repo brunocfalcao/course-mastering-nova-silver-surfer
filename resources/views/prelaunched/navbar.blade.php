@@ -7,8 +7,8 @@
                     masteringnova
                 </span>
             </a>
-            <div class="hidden md:flex space-x-1 py-4   leadning-normal tracking-tighter text-lg items-center">
-                <a href="#" class="w-full bg-gradient-to-r tracking-wide leading-6 from-teal-400 to-sky-500 py-2 px-8 rounded capitalize text-black font-medium">
+            <div class="hidden md:flex space-x-1 py-4 leading-normal tracking-tighter text-lg items-center">
+                <a href="#" class="w-full bg-gradient-to-r tracking-wide leading-6 from-teal-400 to-sky-500 py-2 px-8 rounded capitalize text-black hover:text-white font-medium">
                     Contact Us
                 </a>
             </div>

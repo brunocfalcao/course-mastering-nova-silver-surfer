@@ -16,16 +16,16 @@
                 </svg>
             </div>
             <div class="w-full">
-                <div class="w-full flex flex-row items-center">
-                    <div class="flex flex-col justify-between w-full md:w-4/6 px-2">
+                <div class="w-full flex flex-row items-center justify-between">
+                    <div class="flex flex-col justify-between w-full md:w-3/6 lg:w-4/6 px-2">
                         <label for="email" class="text-xs text-gray-300 px-3">Email</label>
                         <input type="email" name="email" required id="email" placeholder="user@email.com"
                                value="{{ old('email') }}"
                                class="text-teal-500 bg-transparent focus:outline-none border-transparent focus:border-transparent focus:ring-0 placeholder-teal-400/50 ring-0 ring-transparent focus:ring-transparent">
                     </div>
-                    <div class="hidden md:flex md:w-2/6 px-4">
+                    <div class="hidden md:flex md:w-2/6 px-2 lg:px-4">
                         <button type="submit"
-                                class="w-full text-lg bg-gradient-to-r tracking-wide leading-6 from-teal-400 to-sky-500 py-2 px-4 rounded capitalize text-black font-medium">
+                                class="hover:text-white w-full text-base lg:text-lg bg-gradient-to-r tracking-wide leading-6 from-teal-400 to-sky-500  py-2 px-2 lg:px-4 rounded capitalize text-black font-medium">
                             Notify Me
                         </button>
                     </div>

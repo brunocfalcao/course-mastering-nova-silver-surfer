@@ -1,22 +1,22 @@
-<div class="w-full lg:max-w-7xl flex flex-col md:flex-row mx-auto px-2 pb-4 md:px-20 md:pb-14 space-y-10 md:space-y-0 md:space-x-10">
+<div class="w-full lg:max-w-7xl flex flex-col md:flex-row mx-auto px-2 pb-4 md:px-4 lg:px-20 md:pb-14 space-y-10 md:space-y-0 md:space-x-4 lg:space-x-10">
     <div class="hidden md:block md:w-1/2 bg-deep-soft-blue rounded-lg py-18">
         <div class="w-full flex flex-row mt-20 shadow-xl">
-            <div class="w-3/6 h-[32rem] bg-cover bg-start object-scale-up rounded-tl-lg rounded-bl-lg mt-0 z-10
+            <div class="w-3/6 md:h-[28rem] lg:h-[32rem] bg-cover bg-start object-scale-up rounded-tl-lg rounded-bl-lg mt-0 z-10
             -mx-[2rem] md:-mx-[5rem] lg:-mx-[8rem]"
                  style="background-image: url({{ Vite::image('prelaunched-image.png') }} )">
             </div>
 
-            <div class="w-full h-[32rem] bg-cover bg-center"
+            <div class="w-full md:h-[28rem] lg:h-[32rem] bg-cover bg-center"
                  style="background-image: url({{ Vite::image('prelaunched-image.png') }})">
             </div>
         </div>
     </div>
 
     <div class="flex flex-col w-full md:w-1/2">
-        <div class="heading font-medium text-5xl px-2 md:px-0">
+        <div class="heading font-medium text-3xl lg:text-5xl px-2 md:px-0">
             Medium, rare, but mostly well-done HTML email components.
         </div>
-        <div class="progress-area flex flex-col md:flex-row space-y-8 md:space-y-0 md:space-x-8 mt-8 px-2 md:px-0">
+        <div class="progress-area flex flex-col md:flex-row space-y-8 md:space-y-0 space-x-2 lg:space-x-8 mt-8 px-2 md:px-0">
             @include('course::prelaunched.partials.progress')
 
             @include('course::prelaunched.partials.expected-launch-date')
