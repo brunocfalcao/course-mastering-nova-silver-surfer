@@ -18,36 +18,27 @@ class MasteringNovaSilverSurferCourseSeeder extends Seeder
         $course = Course::create([
             'name' => 'Mastering Nova - Silver Surfer',
             'canonical' => 'course-mastering-nova-silver-surfer',
-            'admin_name' => 'Bruno Falcao',
-            'admin_email' => env('MN_SS_EMAIL'),
-            'twitter_handle' => env('MN_SS_TWITTER'),
+            'domain' => env('MN_SS_DOMAIN'),
             'provider_namespace' => 'MasteringNovaSilverSurfer\\MasteringNovaSilverSurferServiceProvider',
             'lemon_squeezy_store_id' => env('LEMON_SQUEEZY_STORE_ID'),
         ]);
 
         $variant = Variant::create([
+            'name' => 'Mastering Nova Silver Surfer',
             'canonical' => 'mastering-nova-silver-surfer',
-            'description' => 'Mastering Nova Silver Surfer version',
+            'description' => 'Mastering Nova Silver Surfer (standard version)',
             'course_id' => $course->id,
             'lemon_squeezy_variant_id' => env('MN_SS_VARIANT_ID'),
-        ]);
-
-        $domain = Domain::create([
-            'name' => env('MN_SS_DOMAIN'),
-            'course_id' => $course->id,
         ]);
 
         // Create admin user.
         $admin = User::create([
             'name' => 'Bruno Falcao (SS)',
             'email' => env('MN_SS_EMAIL'),
+            'twitter_handle' => env('MN_SS_TWITTER'),
             'password' => bcrypt('password'),
-            'is_admin' => true,
+            'course_id_as_admin' => $course->id
         ]);
-
-        $admin->variants()->attach($variant->id);
-
-        $admin->courses()->attach($course->id);
 
         // Now, lets create some chapters, series and videos.
         $chapter1 = Chapter::create([
@@ -65,22 +56,22 @@ class MasteringNovaSilverSurferCourseSeeder extends Seeder
         // Add 2 videos to each chapter.
         $video1 = Video::create([
             'name' => 'Video 1 / Chapter 1 from Mastering Nova Silver Surfer',
-            'created_by' => 1,
+            'course_id' => 1,
         ])->chapters()->attach($chapter1->id, ['index' => 1]);
 
         $video2 = Video::create([
             'name' => 'Video 2 / Chapter 1 from Mastering Nova Silver Surfer',
-            'created_by' => 1,
+            'course_id' => 1,
         ])->chapters()->attach($chapter1->id, ['index' => 2]);
 
         $video3 = Video::create([
             'name' => 'Video 3 / Chapter 2 from Mastering Nova Silver Surfer',
-            'created_by' => 1,
+            'course_id' => 1,
         ])->chapters()->attach($chapter1->id, ['index' => 1]);
 
         $video4 = Video::create([
             'name' => 'Video 4 / Chapter 2 from Mastering Nova Silver Surfer',
-            'created_by' => 1,
+            'course_id' => 1,
         ])->chapters()->attach($chapter1->id, ['index' => 2]);
 
         /**
