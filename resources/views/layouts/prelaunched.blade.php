@@ -21,6 +21,7 @@
 </head>
 
 <body class="antialiased max-h-scr">
+    
 @include('course::partials.scroll-to-top')
 
 @yield('content')
@@ -29,31 +30,33 @@
 @stack('scripts')
 <script>
     let scrollToTopButton = document.getElementById("scroll-to-top-button");
+    let scrollToBottomButton = document.getElementById('scroll-to-bottom-button')
+    const targetPoint = (2/ 5) * window.innerHeight
 
     window.onscroll = function () {
         scrollFunction()
+        handleScrollToBottomUI()
     };
 
     function scrollFunction() {
         if (document.body.scrollTop > 30 || document.documentElement.scrollTop > (window.innerHeight / 5)) {
-            scrollToTopButton.style.display = "block";
+            scrollToTopButton.classList.add('block')
+            scrollToTopButton.classList.remove('hidden')
         } else {
-            scrollToTopButton.style.display = "none";
+            scrollToTopButton.classList.add('hidden')
+            scrollToTopButton.classList.remove('block')
         }
     }
 
-    window.addEventListener('scroll', function () {
-        const targetPoint = (2 / 5) * window.innerHeight
-        let scrollToBottomButton = document.getElementById('scroll-to-bottom-button')
-
+    function handleScrollToBottomUI() {
         if (window.scrollY >= targetPoint) {
-            scrollToBottomButton.classList.add('opacity-0',);
+            scrollToBottomButton.classList.add('opacity-0');
             scrollToBottomButton.classList.remove('opacity-100');
         } else {
-            scrollToBottomButton.classList.remove('opacity-0',);
-            scrollToBottomButton.classList.add('opacity-100',);
+            scrollToBottomButton.classList.remove('opacity-0');
+            scrollToBottomButton.classList.add('opacity-100');
         }
-    });
+    }
 
     function scrollToTop() {
         document.body.scrollTop = 0;
