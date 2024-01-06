@@ -25,8 +25,8 @@ class MasteringNovaSilverSurferCourseSeeder extends Seeder
             'meta' => [
                 'description' => 'my seo description',
                 'author' => 'my seo author',
-                'twitter:site' => 'my seo twitter'
-            ]
+                'twitter:site' => 'my seo twitter',
+            ],
         ]);
 
         $variant = Variant::create([
