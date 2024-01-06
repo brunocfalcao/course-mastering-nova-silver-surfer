@@ -12,8 +12,7 @@
     <link rel="apple-touch-icon" sizes="180x180" href="{{ Vite::image('favicons/apple-touch-icon.png') }}">
     <link rel="icon" type="image/png" sizes="32x32" href="{{ Vite::image('favicons/favicon-32x32.png') }}">
     <link rel="icon" type="image/png" sizes="16x16" href="{{ Vite::image('favicons/favicon-16x16.png') }}">
-    <link rel="mask-icon" href="{{ Vite::image('favicons/safari-pinned-tab.svg" color="#5bbad5') }}">
-    <link rel="manifest" href="{{ Vite::image('favicons/site.webmanifest') }}">
+    <link rel="mask-icon" href="{{ Vite::image('favicons/safari-pinned-tab.svg') }} color="#5bbad5">
     <meta name="msapplication-TileColor" content="#da532c">
     <meta name="theme-color" content="#ffffff">
 
