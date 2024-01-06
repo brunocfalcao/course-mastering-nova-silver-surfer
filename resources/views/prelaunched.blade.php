@@ -3,10 +3,10 @@
 @section('title', $course->meta_title ?? $course->name)
 
 @push('metatags')
-    <meta name="description" content="{{ $course->meta_description }}">
-    <meta name="author" content="{{ $course->admin_name }}">
+    @foreach(Nereus::course()->meta as $tag => $value)
+    <meta name="{{ $tag }}" content="{{ $value }}">
+    @endforeach
     <link rel="canonical" href="https://silver-surfer.masteringnova.com/" />
-    <meta name="twitter:site" content="{{ '@' . $course->meta_twitter_alias }}" />
 @endpush
 
 @section('content')
@@ -28,7 +28,6 @@ style="
     @include('course::prelaunched.partials.flare')
     @include('course::prelaunched.get-access')
     @include('course::prelaunched.partials.flare')
-
     @include('course::prelaunched.footer')
 </div>
 @endsection

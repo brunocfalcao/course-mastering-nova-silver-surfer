@@ -4,7 +4,6 @@ namespace MasteringNovaSilverSurfer\Database\Seeders;
 
 use Eduka\Cube\Models\Chapter;
 use Eduka\Cube\Models\Course;
-use Eduka\Cube\Models\Domain;
 use Eduka\Cube\Models\Order;
 use Eduka\Cube\Models\User;
 use Eduka\Cube\Models\Variant;
@@ -21,6 +20,13 @@ class MasteringNovaSilverSurferCourseSeeder extends Seeder
             'domain' => env('MN_SS_DOMAIN'),
             'provider_namespace' => 'MasteringNovaSilverSurfer\\MasteringNovaSilverSurferServiceProvider',
             'lemon_squeezy_store_id' => env('LEMON_SQUEEZY_STORE_ID'),
+            'prelaunched_at' => now()->subHours(1),
+            'launched_at' => now()->addDay(365),
+            'meta' => [
+                'description' => 'my seo description',
+                'author' => 'my seo author',
+                'twitter:site' => 'my seo twitter'
+            ]
         ]);
 
         $variant = Variant::create([
@@ -37,7 +43,7 @@ class MasteringNovaSilverSurferCourseSeeder extends Seeder
             'email' => env('MN_SS_EMAIL'),
             'twitter_handle' => env('MN_SS_TWITTER'),
             'password' => bcrypt('password'),
-            'course_id_as_admin' => $course->id
+            'course_id_as_admin' => $course->id,
         ]);
 
         // Now, lets create some chapters, series and videos.
