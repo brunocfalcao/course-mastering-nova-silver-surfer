@@ -23,7 +23,7 @@
                                value="{{ old('email') }}"
                                class="text-teal-500 bg-transparent focus:outline-none border-transparent focus:border-transparent focus:ring-0 placeholder-teal-400/50 ring-0 ring-transparent focus:ring-transparent">
                     </div>
-                    <div class="hidden md:flex md:w-2/6 px-2 lg:px-4">
+                    <div class="hidden md:flex md:w-2/6 px-2 lg:px-2 xl:px-4">
                         <button type="submit"
                                 class="hover:text-white w-full text-base lg:text-lg bg-gradient-to-r tracking-wide leading-6 from-teal-400 to-sky-500  py-2 px-2 lg:px-4 rounded capitalize text-black font-medium">
                             Notify Me
