@@ -67,7 +67,6 @@
         window.scrollTo(0, document.body.scrollHeight);
     }
 
-
     function createCircularProgress(
         wrapper,
         radius,
