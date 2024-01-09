@@ -5,9 +5,9 @@
         </p>
     </div>
 @else
-    <form method="POST" action="{{ route('prelaunched.subscribe') }}" class="flex flex-col w-full">
+    <form method="POST" action="{{ route('prelaunched.subscribe') }}" class="flex flex-col w-full px-2 md:px-0">
         @csrf
-        <p class="py-2 leading-6 text-lg tracking-wide w-full">Get notified when we launch:</p>
+        <p class="mt-6 md:mt-0 py-2 leading-6 text-lg tracking-wide w-full">Get notified when we launch:</p>
         <div class="bg-deep-soft-blue flex flex-row rounded justify-start w-full pl-3 py-2">
             <div class="flex items-center space-y-2">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
@@ -25,7 +25,7 @@
                     </div>
                     <div class="hidden md:flex md:w-2/6 px-2 lg:px-2 xl:px-4">
                         <button type="submit"
-                                class="hover:text-white w-full text-base lg:text-lg bg-gradient-to-r tracking-wide leading-6 from-teal-400 to-sky-500  py-2 px-2 lg:px-4 rounded capitalize text-black font-medium">
+                                class="hover:text-white w-full text-base lg:text-lg bg-gradient-to-r tracking-wide leading-6 from-teal-400 to-sky-500  py-2 px-2 lg:px-4 rounded capitalize text-black font-semibold">
                             Notify Me
                         </button>
                     </div>
@@ -34,7 +34,7 @@
         </div>
 
         @error('email')
-        <p class="font-2xl text-red-400">
+        <p class="font-2xl">
             {{ $message }}
         </p>
         @enderror

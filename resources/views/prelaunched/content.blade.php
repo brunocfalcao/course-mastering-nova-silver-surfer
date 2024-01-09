@@ -13,7 +13,7 @@
     </div>
 
     <div class="flex flex-col w-full md:w-1/2 px-2">
-        <div class="heading font-medium text-3xl xl:text-5xl px-2 md:px-0">
+        <div class="heading font-medium text-3xl xl:text-5xl px-4 md:px-0">
             Medium, rare, but mostly well-done HTML email components.
         </div>
 

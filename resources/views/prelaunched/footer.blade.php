@@ -1,5 +1,5 @@
 <div class="w-full my-10 py-10">
-    <div class="max-w-7xl mx-auto px-[4.5rem]">
+    <div class="max-w-7xl mx-auto px-4 lg:px-[4.5rem]">
         <div class="w-full flex flex-col-reverse md:flex-row justify-between">
             <div>
                 <a href="/" class="flex flex-row justify-center md:justify-start items-center">

@@ -1,5 +1,5 @@
 <div class="w-full mt-10 mb-6">
-    <div class="max-w-7xl mx-auto px-[4.5rem]">
+    <div class="max-w-7xl mx-auto px-4 lg:px-[4.5rem]">
         <div class="w-full flex justify-center md:justify-between">
             <a href="/" class="flex flex-row items-center">
                 <img class="w-20 h-20" src="{{ Vite::image('mastering-nova-mascot.svg') }}" alt="mastering nova">
