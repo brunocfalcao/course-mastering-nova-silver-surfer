@@ -3,71 +3,61 @@
 @tailwind utilities;
 
 html {
-    scroll-behavior: smooth;
-    transition-delay: 0.75s;
+  scroll-behavior: smooth;
+  transition-delay: 0.75s;
 }
 
-#scroll-to-top-button {
-    /*display: none;*/
-    /*position: fixed;*/
-    /*bottom: 20px;*/
-    /*right: 30px;*/
-    /*z-index: 99;*/
-    /*font-size: 18px;*/
-    /*border: none;*/
-    /*outline: none;*/
-    /*cursor: pointer;*/
+.wireframe {
+  outline: red;
+  outline-width: 1px;
+  outline-style: ridge;
 }
-
-/*#scroll-to-top-button:hover {*/
-/*    background-color: #555;*/
-/*}*/
 
 @keyframes gradient {
-    0% {
-        background-position: 100% 50%;
-    }
-    100% {
-        background-position: 0 50%;
-    }
+  0% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0 50%;
+  }
 }
 
 .hover\:animate-gradient:hover {
-    animation: gradient 1s ease infinite;
+  animation: gradient 1s ease infinite;
 }
 
 /* @resources/assets */
 @layer utilities {
-    .border-gradient {
-        border-width: 1px;
-        border-style: solid;
-        border-image: linear-gradient(135deg, #00ffc4 0%, #56d7fe 100%);
-        /*border-image-slice: 1;*/
-    }
+  .border-gradient {
+    border-width: 1px;
+    border-style: solid;
+    border-image: linear-gradient(135deg, #00ffc4 0%, #56d7fe 100%);
+    /*border-image-slice: 1;*/
+  }
 }
 
 /* In your CSS or in your Tailwind CSS configuration */
 @layer utilities {
-    .text-gradient {
-        position: relative;
-        background: linear-gradient(135deg, #00ffc4 0%, #56d7fe 100%);
-        background-clip: text;
-        -webkit-background-clip: text; /* For Safari */
-        color: transparent;
-        display: inline-block;
-    }
+  .text-gradient {
+    position: relative;
+    background: linear-gradient(135deg, #00ffc4 0%, #56d7fe 100%);
+    background-clip: text;
+    -webkit-background-clip: text; /* For Safari */
+    color: transparent;
+    display: inline-block;
+  }
 }
 
 .progress-incomplete {
-    stroke: #39393A;
+  stroke: #39393a;
 }
 
 .progress-completed {
-    stroke: #2DD4BF;
+  stroke: #2dd4bf;
 }
 
 .progress-font {
-    background: linear-gradient(135deg, #00FFC4 0%, #56D7FE 100%);
+  background: linear-gradient(135deg, #00ffc4 0%, #56d7fe 100%);
 }
 
 /* @end-course-mastering-nova-silver-surfer */

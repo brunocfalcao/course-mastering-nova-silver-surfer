@@ -40,7 +40,7 @@
         @enderror
         <div class="block md:hidden w-full mt-4">
             <button type="submit"
-                    class="w-full bg-gradient-to-r text-lg tracking-wide leading-6 hover:text-white from-teal-400 to-sky-500 py-3 px-4 rounded capitalize text-black font-medium">
+                    class="w-full bg-gradient-to-r text-lg tracking-wide leading-6 hover:text-white from-teal-400 to-sky-500 py-3 px-4 rounded capitalize text-black font-semibold">
                 Notify Me
             </button>
         </div>
