@@ -32,7 +32,7 @@
     <script>
         let scrollToTopButton = document.getElementById("scroll-to-top-button");
         let scrollToBottomButton = document.getElementById('scroll-to-bottom-button')
-        const targetPoint = (2 / 5) * window.innerHeight
+        const targetPoint = (1 / 5) * window.innerHeight
 
         window.onscroll = function() {
             scrollFunction()
@@ -40,9 +40,9 @@
         };
 
         function scrollFunction() {
-            if (document.body.scrollTop > 30 || document.documentElement.scrollTop > (window.innerHeight / 5)) {
-                scrollToTopButton.classList.add('block')
+            if (document.body.scrollTop > 30 || document.documentElement.scrollTop > (window.innerHeight / 4)) {
                 scrollToTopButton.classList.remove('hidden')
+                scrollToTopButton.classList.add('block')
             } else {
                 scrollToTopButton.classList.add('hidden')
                 scrollToTopButton.classList.remove('block')
