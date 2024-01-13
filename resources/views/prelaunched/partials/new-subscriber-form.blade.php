@@ -19,7 +19,7 @@
                 <div class="w-full flex flex-row items-center justify-between">
                     <div class="flex flex-col justify-between w-full md:w-3/6 lg:w-4/6 px-2">
                         <label for="email" class="text-xs text-gray-300 px-3">Email</label>
-                        <input type="email" name="email" required id="email" placeholder="user@email.com"
+                        <input type="email" name="email" required id="email" placeholder="Add your email here"
                                value="{{ old('email') }}"
                                class="text-teal-500 bg-transparent focus:outline-none border-transparent focus:border-transparent focus:ring-0 placeholder-[#56D8FE] ring-0 ring-transparent focus:ring-transparent">
                     </div>
