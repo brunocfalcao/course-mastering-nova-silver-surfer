@@ -14,6 +14,8 @@ class MasteringNovaSilverSurferCourseSeeder extends Seeder
 {
     public function run()
     {
+        return;
+
         $course = Course::create([
             'name' => 'Mastering Nova - Silver Surfer',
             'canonical' => 'course-mastering-nova-silver-surfer',
