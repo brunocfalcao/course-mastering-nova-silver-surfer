@@ -5,6 +5,7 @@ namespace MasteringNovaSilverSurfer\Database\Seeders;
 use Eduka\Cube\Models\Chapter;
 use Eduka\Cube\Models\Course;
 use Eduka\Cube\Models\Order;
+use Eduka\Cube\Models\Organization;
 use Eduka\Cube\Models\User;
 use Eduka\Cube\Models\Variant;
 use Eduka\Cube\Models\Video;
@@ -14,14 +15,27 @@ class MasteringNovaSilverSurferCourseSeeder extends Seeder
 {
     public function run()
     {
-        return;
+        if (! Organization::exists()) {
+            $organization = Organization::create([
+                'name' => 'brunofalcao.dev',
+                'domain' => env('EDUKA_BACKEND_URL'),
+                'provider_namespace' => '\Eduka\Dev\DevServiceProvider',
+            ]);
+        } else {
+            $organization = Organization::find(1);
+        }
 
         $course = Course::create([
             'name' => 'Mastering Nova - Silver Surfer',
             'canonical' => 'course-mastering-nova-silver-surfer',
             'domain' => env('MN_SS_DOMAIN'),
             'provider_namespace' => 'MasteringNovaSilverSurfer\\MasteringNovaSilverSurferServiceProvider',
+            'organization_id' => 1,
+
             'lemon_squeezy_store_id' => env('LEMON_SQUEEZY_STORE_ID'),
+            'lemon_squeezy_api_key' => env('LEMON_SQUEEZY_API_KEY'),
+            'lemon_squeezy_hash_key' => env('LEMON_SQUEEZY_HASH_KEY'),
+
             'prelaunched_at' => now()->subHours(1),
             'launched_at' => now()->addDay(365),
             'meta' => [
@@ -65,36 +79,25 @@ class MasteringNovaSilverSurferCourseSeeder extends Seeder
         $video1 = Video::create([
             'name' => 'Video 1 / Chapter 1 from Mastering Nova Silver Surfer',
             'course_id' => 1,
-        ])->chapters()->attach($chapter1->id, ['index' => 1]);
+            'chapter_id' => $chapter1->id
+        ]);
 
         $video2 = Video::create([
             'name' => 'Video 2 / Chapter 1 from Mastering Nova Silver Surfer',
             'course_id' => 1,
-        ])->chapters()->attach($chapter1->id, ['index' => 2]);
+            'chapter_id' => $chapter1->id
+        ]);
 
         $video3 = Video::create([
             'name' => 'Video 3 / Chapter 2 from Mastering Nova Silver Surfer',
             'course_id' => 1,
-        ])->chapters()->attach($chapter1->id, ['index' => 1]);
+            'chapter_id' => $chapter1->id
+        ]);
 
         $video4 = Video::create([
             'name' => 'Video 4 / Chapter 2 from Mastering Nova Silver Surfer',
             'course_id' => 1,
-        ])->chapters()->attach($chapter1->id, ['index' => 2]);
-
-        /**
-         * Create an order like if the user was paying for the course.
-         * The variant is assigned to a user via the orders/variants/users
-         * logic. Meaning there is no user_variant table. We check the
-         * user_id in the orders, grab all the variant id, and get the
-         * lemonsqueezy variants from the variants table. The we can
-         * match what course belongs to what variant.
-         */
-        /*
-        $order = Order::create([
-            'user_id' => 1,
-            'variant_id' => 70434,
+            'chapter_id' => $chapter1->id
         ]);
-        */
     }
 }
