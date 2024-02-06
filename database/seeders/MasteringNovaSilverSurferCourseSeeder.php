@@ -4,7 +4,6 @@ namespace MasteringNovaSilverSurfer\Database\Seeders;
 
 use Eduka\Cube\Models\Chapter;
 use Eduka\Cube\Models\Course;
-use Eduka\Cube\Models\Order;
 use Eduka\Cube\Models\Organization;
 use Eduka\Cube\Models\User;
 use Eduka\Cube\Models\Variant;
@@ -79,25 +78,25 @@ class MasteringNovaSilverSurferCourseSeeder extends Seeder
         $video1 = Video::create([
             'name' => 'Video 1 / Chapter 1 from Mastering Nova Silver Surfer',
             'course_id' => 1,
-            'chapter_id' => $chapter1->id
+            'chapter_id' => $chapter1->id,
         ]);
 
         $video2 = Video::create([
             'name' => 'Video 2 / Chapter 1 from Mastering Nova Silver Surfer',
             'course_id' => 1,
-            'chapter_id' => $chapter1->id
+            'chapter_id' => $chapter1->id,
         ]);
 
         $video3 = Video::create([
             'name' => 'Video 3 / Chapter 2 from Mastering Nova Silver Surfer',
             'course_id' => 1,
-            'chapter_id' => $chapter1->id
+            'chapter_id' => $chapter1->id,
         ]);
 
         $video4 = Video::create([
             'name' => 'Video 4 / Chapter 2 from Mastering Nova Silver Surfer',
             'course_id' => 1,
-            'chapter_id' => $chapter1->id
+            'chapter_id' => $chapter1->id,
         ]);
     }
 }
