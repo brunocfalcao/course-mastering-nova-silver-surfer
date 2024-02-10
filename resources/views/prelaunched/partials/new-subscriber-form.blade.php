@@ -22,6 +22,7 @@
                         <input type="email" name="email" required id="email" placeholder="Add your email here"
                                value="{{ old('email') }}"
                                class="text-teal-500 bg-transparent focus:outline-none border-transparent focus:border-transparent focus:ring-0 placeholder-[#56D8FE] ring-0 ring-transparent focus:ring-transparent">
+                        <input type="hidden" name="course" value="{{ Nereus::course()->uuid }}">
                     </div>
                     <div class="hidden md:flex md:w-2/6 px-2 lg:px-2 xl:px-4">
                         <button type="submit"
