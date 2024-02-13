@@ -35,6 +35,7 @@ class MasteringNovaSilverSurferCourseSeeder extends Seeder
             'lemon_squeezy_api_key' => env('LEMON_SQUEEZY_API_KEY'),
             'lemon_squeezy_hash_key' => env('LEMON_SQUEEZY_HASH_KEY'),
 
+            'twitter_handle' => env('MN_SS_TWITTER'),
             'prelaunched_at' => now()->subHours(1),
             'launched_at' => now()->addDay(365),
             'meta' => [
@@ -56,7 +57,6 @@ class MasteringNovaSilverSurferCourseSeeder extends Seeder
         $admin = User::create([
             'name' => 'Bruno Falcao (SS)',
             'email' => env('MN_SS_EMAIL'),
-            'twitter_handle' => env('MN_SS_TWITTER'),
             'password' => bcrypt('password'),
             'course_id_as_admin' => $course->id,
         ]);
