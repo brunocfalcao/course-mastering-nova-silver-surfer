@@ -38,7 +38,7 @@ class MasteringNovaSilverSurferCourseSeeder extends Seeder
             'twitter_handle' => env('MN_SS_TWITTER'),
             'prelaunched_at' => now()->subHours(1),
             'launched_at' => now()->addDay(365),
-            'meta' => [
+            'meta_names' => [
                 'description' => 'my seo description',
                 'author' => 'my seo author',
                 'twitter:site' => 'my seo twitter',
