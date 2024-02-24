@@ -31,6 +31,9 @@ class MasteringNovaSilverSurferCourseSeeder extends Seeder
             'provider_namespace' => 'MasteringNovaSilverSurfer\\MasteringNovaSilverSurferServiceProvider',
             'organization_id' => 1,
 
+            'vimeo_folder_id' => env('MN_SS_COURSE_VIMEO_FOLDER_ID'),
+            'vimeo_uri' => env('MN_SS_COURSE_VIMEO_FOLDER_ID'),
+
             'lemon_squeezy_store_id' => env('LEMON_SQUEEZY_STORE_ID'),
             'lemon_squeezy_api_key' => env('LEMON_SQUEEZY_API_KEY'),
             'lemon_squeezy_hash_key' => env('LEMON_SQUEEZY_HASH_KEY'),
@@ -38,6 +41,10 @@ class MasteringNovaSilverSurferCourseSeeder extends Seeder
             'twitter_handle' => env('MN_SS_TWITTER'),
             'prelaunched_at' => now()->subHours(1),
             'launched_at' => now()->addDay(365),
+
+            'admin_email' => env('MN_SS_EMAIL'),
+            'admin_name' => 'Bruno Falcao (SS)',
+
             'meta_names' => [
                 'description' => 'my seo description',
                 'author' => 'my seo author',
@@ -58,7 +65,6 @@ class MasteringNovaSilverSurferCourseSeeder extends Seeder
             'name' => 'Bruno Falcao (SS)',
             'email' => env('MN_SS_EMAIL'),
             'password' => bcrypt('password'),
-            'course_id_as_admin' => $course->id,
         ]);
 
         // Now, lets create some chapters, series and videos.
@@ -66,12 +72,16 @@ class MasteringNovaSilverSurferCourseSeeder extends Seeder
             'name' => "What's new on the Silver Surfer version",
             'description' => "Let's deep dive just in the new features that this new version brings, and I can say you will be amazed on how much the Laravel Nova team heard about what the community was asking for",
             'course_id' => 1,
+            'vimeo_uri' => '/users/78811133/projects/19631829',
+            'vimeo_folder_id' => 19631829,
         ]);
 
         $chapter2 = Chapter::create([
             'name' => 'Deep diving into the Resources',
             'description' => "The Resource logic is the heart of Laravel Nova. Let's dive into what powerful features you can take from it, and how easy is to create your CRUD features to your Eloquent models",
             'course_id' => 1,
+            'vimeo_uri' => '/users/78811133/projects/19631830',
+            'vimeo_folder_id' => 19631830,
         ]);
 
         // Add 2 videos to each chapter.
