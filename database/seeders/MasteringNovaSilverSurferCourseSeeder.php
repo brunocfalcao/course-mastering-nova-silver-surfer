@@ -32,7 +32,7 @@ class MasteringNovaSilverSurferCourseSeeder extends Seeder
             'organization_id' => 1,
 
             'vimeo_folder_id' => env('MN_SS_COURSE_VIMEO_FOLDER_ID'),
-            'vimeo_uri' => env('MN_SS_COURSE_VIMEO_FOLDER_ID'),
+            'vimeo_uri' => env('MN_SS_COURSE_VIMEO_URI'),
 
             'lemon_squeezy_store_id' => env('LEMON_SQUEEZY_STORE_ID'),
             'lemon_squeezy_api_key' => env('LEMON_SQUEEZY_API_KEY'),
