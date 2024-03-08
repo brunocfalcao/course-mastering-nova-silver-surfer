@@ -1,35 +1,22 @@
 /** @type {import('tailwindcss').Config} */
-
-const defaultTheme = require('tailwindcss/defaultTheme')
-
 module.exports = {
     content: [
         "./resources/**/*.blade.php",
         "./resources/**/*.js",
-        // "../eduka-ui/resources/**/*.blade.php",
-        // "../eduka-ui/resources/**/*.js",
-        // "../eduka-ui/resources/**/*.vue",
-        ],
+    ],
     theme: {
+        fontFamily: {
+            'sans': ['Titillium Web', 'ui-sans-serif', 'system-ui'],
+            'serif': ['ui-serif', 'Georgia'],
+            'mono': ['ui-monospace', 'SFMono-Regular'],
+        },
         extend: {
-            zIndex: {
-                1: '1'
-            },
-            fontFamily: {
-                'sans': ['"Titillium Web"', 'sans-serif', ...defaultTheme.fontFamily.sans],
-            },
-            colors : {
-                "primary-black": "#101010",
-                "deep-soft-blue": "#272E44",
-                "bright-blue" : "#56D7FE",
-                // Gray based color.
-                'gray-dark-900': '#1C242E',
+            screens: {
+                'xs': '480px',
             },
         },
     },
     plugins: [
-        // require('flowbite/plugin'),
         require('@tailwindcss/forms'),
-        require('@tailwindcss/aspect-ratio'),
-    ]
-};
+    ],
+}

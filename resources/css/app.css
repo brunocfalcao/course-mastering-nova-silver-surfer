@@ -2,62 +2,21 @@
 @tailwind components;
 @tailwind utilities;
 
-html {
-  scroll-behavior: smooth;
-  transition-delay: 0.75s;
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active  {
+  transition: background-color 50000s;
+  box-shadow: 0 0 0 1000px #272E44 inset;
+  -webkit-text-fill-color: #67E8F9 !important;
+  caret-color: #67E8F9 !important;
+  background-color: transparent !important;
 }
 
-.wireframe {
-  outline: red;
-  outline-width: 1px;
-  outline-style: ridge;
+.btn-primary-colors {
+    @apply transition-all duration-300 uppercase bg-gradient-to-br from-[#00FFC4] to-[#56D7FE] text-black font-bold tracking-widest rounded-lg;
 }
 
-@keyframes gradient {
-  0% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0 50%;
-  }
+.btn-primary-colors:hover {
+    @apply brightness-90;
 }
-
-.hover\:animate-gradient:hover {
-  animation: gradient 1s ease infinite;
-}
-
-/* @resources/assets */
-@layer utilities {
-  .border-gradient {
-    border-width: 1px;
-    border-style: solid;
-    border-image: linear-gradient(135deg, #00ffc4 0%, #56d7fe 100%);
-    /*border-image-slice: 1;*/
-  }
-}
-
-/* In your CSS or in your Tailwind CSS configuration */
-@layer utilities {
-  .text-gradient {
-    position: relative;
-    background: linear-gradient(135deg, #00ffc4 0%, #56d7fe 100%);
-    background-clip: text;
-    -webkit-background-clip: text; /* For Safari */
-    color: transparent;
-    display: inline-block;
-  }
-}
-
-.progress-incomplete {
-  stroke: #39393a;
-}
-
-.progress-completed {
-  stroke: #2dd4bf;
-}
-
-.progress-font {
-  background: linear-gradient(135deg, #00ffc4 0%, #56d7fe 100%);
-}
-
-/* @end-course-mastering-nova-silver-surfer */
