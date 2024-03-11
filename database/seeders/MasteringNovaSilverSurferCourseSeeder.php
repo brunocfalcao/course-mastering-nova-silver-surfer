@@ -34,6 +34,7 @@ class MasteringNovaSilverSurferCourseSeeder extends Seeder
         // Create course.
         $course = Course::create([
             'name' => 'Mastering Nova - Silver Surfer',
+            'description' => 'Course to learn Laravel Nova - Silver surfer version',
             'canonical' => 'course-mastering-nova-silver-surfer',
             'domain' => env('MN_SS_DOMAIN'),
             'provider_namespace' => 'MasteringNovaSilverSurfer\\MasteringNovaSilverSurferServiceProvider',
@@ -52,12 +53,6 @@ class MasteringNovaSilverSurferCourseSeeder extends Seeder
 
             'admin_email' => env('MN_SS_EMAIL'),
             'admin_name' => 'Bruno Falcao (SS)',
-
-            'meta_names' => [
-                'description' => 'my seo description',
-                'author' => 'my seo author',
-                'twitter:site' => 'my seo twitter',
-            ],
         ]);
 
         $variant = Variant::create([

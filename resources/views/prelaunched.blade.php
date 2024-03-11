@@ -20,7 +20,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Titillium+Web:wght@400;700&display=swap" rel="stylesheet">
 
     <!-- Meta / SEO -->
-    @ui_meta_names
+    @ui_metas(Nereus::course())
 
     <!-- JS -->
     @vite('resources/js/app.js')
