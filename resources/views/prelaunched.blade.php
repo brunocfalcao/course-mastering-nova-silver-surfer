@@ -20,7 +20,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Titillium+Web:wght@400;700&display=swap" rel="stylesheet">
 
     <!-- Meta / SEO -->
-    @ui_metas(Nereus::course())
 
     <!-- JS -->
     @vite('resources/js/app.js')
@@ -45,13 +44,15 @@
                     <h2 class="absolute bottom-8 text-white font-bold text-2xl text-center">Current<br>Progress</h2>
                 </div>
                 <div class="relative border-2 border-[#00FFC4] rounded-2xl px-6 pt-12 pb-32 flex flex-col items-center justify-center">
-                    <img src="{{ Vite::resource('images/March 2023.svg') }}" class="max-w-[80%] w-40">
+                    <img src="{{ Vite::resource('images/launch-date.svg') }}" class="max-w-[80%] w-40">
                     <h2 class="absolute bottom-8 text-white font-bold text-2xl text-center mt-8">Estimated<br>Launch Date</h2>
                 </div>
             </div>
 
             <div class="mt-10 relative">
-                <form id="notify-me-form" method="POST">
+                <form name="notify-me-form" id="notify-me-form" method="POST" action="{{ route('prelaunched.subscribe') }}">
+                    @csrf
+                    <x-honeypot />
                     <p class="text-xl text-white italic font-normal">Get notified when I launch, plus a nice discount coupon:</p>
                     <div class="relative mt-4 rounded-lg shadow-lg">
                         <div class="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-4">
@@ -63,7 +64,6 @@
                         <input type="email" name="email" required id="email" class="block w-full autofill:bg-[#272E44] autofill:text-cyan-300 rounded-lg border-0 py-4 pl-12 bg-[#272E44] text-cyan-300 placeholder:text-gray-400 focus:outline-none focus:ring-0" placeholder="you@example.com">
                         <button id="notify-me-button-1" type="submit" class="btn-primary-colors px-6 hidden xs:block absolute right-2 top-2 bottom-2">Subscribe</button>
                     </div>
-                    <button id="notify-me-button-2" type="submit" class="btn-primary-colors px-6 w-full xs:hidden py-4 mt-2 mx-auto">Notify Me</button>
                 </form>
 
                 <p id="notify-me-success" class="hidden absolute top-1/2 left-0 right-0 bottom-1/2 -translate-y-1/2 text-xl text-white font-normal text-center">Thank you for signing up!</p>
@@ -81,9 +81,9 @@
 
     <div class="max-w-7xl mx-auto px-6 py-6 sm:px-8 mt-8 mb-6">
         <div class="w-full h-0.5 bg-gradient-to-r from-transparent via-[#0CFEC7] to-transparent"></div>
-        <div class="py-8 flex flex-col sm:flex-row items-center gap-8 sm:gap-16">
-            <h2 class="text-white text-2xl sm:text-3xl font-bold w-full max-w-[48rem] leading-snug text-center sm:text-left">If you bought my previous course, for the Orion version, you can still access it here (the new version is free for you)</h2>
-            <button class="btn-primary-colors px-6 py-4 sm:ml-auto flex-shrink-0 w-full sm:w-auto">Access Orion Course</button>
+        <div class="py-8 flex flex-col lg:flex-row items-center gap-8 lg:gap-16">
+            <h2 class="text-white text-2xl sm:text-3xl font-bold w-full max-w-[48rem] leading-snug text-center lg:text-left">If you bought my previous course, for the Orion version, you can still access it here (the new version is free for you)</h2>
+            <button class="btn-primary-colors px-6 py-4 sm:mx-auto lg:mr-0 lg:ml-auto flex-shrink-0 w-full sm:w-auto">Access Orion Course</button>
         </div>
         <div class="w-full h-0.5 bg-gradient-to-r from-transparent via-[#0CFEC7] to-transparent"></div>
     </div>

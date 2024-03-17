@@ -5,10 +5,13 @@ import fs from 'fs';
 
 export default defineConfig({
     plugins: [
-        laravel([
-            'resources/css/app.css',
-            'resources/js/app.js',
-        ]),
+        laravel({
+            input: [
+                'resources/css/app.css',
+                'resources/js/app.js'
+            ],
+            refresh: true,
+        }),
     ],
     build: {
         outDir: path.resolve(__dirname, `public/vendor/course-mastering-nova-silver-surfer`),

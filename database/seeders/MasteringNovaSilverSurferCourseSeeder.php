@@ -2,10 +2,10 @@
 
 namespace MasteringNovaSilverSurfer\Database\Seeders;
 
+use Eduka\Cube\Models\Backend;
 use Eduka\Cube\Models\Chapter;
 use Eduka\Cube\Models\Course;
-use Eduka\Cube\Models\Organization;
-use Eduka\Cube\Models\User;
+use Eduka\Cube\Models\Student;
 use Eduka\Cube\Models\Variant;
 use Eduka\Cube\Models\Video;
 use Illuminate\Database\Seeder;
@@ -14,18 +14,18 @@ class MasteringNovaSilverSurferCourseSeeder extends Seeder
 {
     public function run()
     {
-        if (! Organization::exists()) {
-            $organization = Organization::create([
+        if (! Backend::exists()) {
+            $backend = Backend::create([
                 'name' => 'brunofalcao.dev',
                 'domain' => env('EDUKA_BACKEND_URL'),
                 'provider_namespace' => '\Eduka\Dev\DevServiceProvider',
             ]);
         } else {
-            $organization = Organization::find(1);
+            $backend = Backend::find(1);
         }
 
         // Create admin user.
-        $admin = User::create([
+        $admin = Student::create([
             'name' => 'Bruno Falcao (SS)',
             'email' => env('MN_SS_EMAIL'),
             'password' => bcrypt('password'),
@@ -38,7 +38,7 @@ class MasteringNovaSilverSurferCourseSeeder extends Seeder
             'canonical' => 'course-mastering-nova-silver-surfer',
             'domain' => env('MN_SS_DOMAIN'),
             'provider_namespace' => 'MasteringNovaSilverSurfer\\MasteringNovaSilverSurferServiceProvider',
-            'organization_id' => 1,
+            'backend_id' => 1,
 
             //'vimeo_folder_id' => env('MN_SS_COURSE_VIMEO_FOLDER_ID'),
             //'vimeo_uri' => env('MN_SS_COURSE_VIMEO_URI'),

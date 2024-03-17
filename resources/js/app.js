@@ -32,22 +32,6 @@ $(document).ready(function(){
     on_scroll();
 
     /*
-    var datastring = $("#contactForm").serialize();
-    $.ajax({
-        type: "POST",
-        url: "your url.php",
-        data: datastring,
-        dataType: "json",
-        success: function(data) {
-            //var obj = jQuery.parseJSON(data); if the dataType is not specified as json uncomment this
-            // do what ever you want with the server response
-        },
-        error: function() {
-            alert('error handling here');
-        }
-    });
-    */
-
     $('#notify-me-form').submit(function(e){
         $('#notify-me-form').addClass('opacity-0 pointer-events-none');
         $('#notify-me-spinner').removeClass('hidden').addClass('flex');
@@ -69,4 +53,5 @@ $(document).ready(function(){
         e.preventDefault();
         return false;
     });
+    */
 });
