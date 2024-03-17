@@ -5,9 +5,9 @@ namespace MasteringNovaSilverSurfer\Database\Seeders;
 use Eduka\Cube\Models\Backend;
 use Eduka\Cube\Models\Chapter;
 use Eduka\Cube\Models\Course;
+use Eduka\Cube\Models\Episode;
 use Eduka\Cube\Models\Student;
 use Eduka\Cube\Models\Variant;
-use Eduka\Cube\Models\Video;
 use Illuminate\Database\Seeder;
 
 class MasteringNovaSilverSurferCourseSeeder extends Seeder
@@ -63,7 +63,7 @@ class MasteringNovaSilverSurferCourseSeeder extends Seeder
             'lemon_squeezy_variant_id' => env('MN_SS_VARIANT_ID'),
         ]);
 
-        // Now, lets create some chapters, series and videos.
+        // Now, lets create some chapters, series and episodes.
         $chapter1 = Chapter::create([
             'name' => "What's new on the Silver Surfer version",
             'description' => "Let's deep dive just in the new features that this new version brings, and I can say you will be amazed on how much the Laravel Nova team heard about what the community was asking for",
@@ -80,27 +80,27 @@ class MasteringNovaSilverSurferCourseSeeder extends Seeder
             //'vimeo_folder_id' => 19631830,
         ]);
 
-        // Add 2 videos to each chapter.
-        $video1 = Video::create([
-            'name' => 'Video 1 / Chapter 1 from Mastering Nova Silver Surfer',
+        // Add 2 episodes to each chapter.
+        $episode1 = Episode::create([
+            'name' => 'Episode 1 / Chapter 1 from Mastering Nova Silver Surfer',
             'course_id' => 1,
             'chapter_id' => $chapter1->id,
         ]);
 
-        $video2 = Video::create([
-            'name' => 'Video 2 / Chapter 1 from Mastering Nova Silver Surfer',
+        $episode2 = Episode::create([
+            'name' => 'Episode 2 / Chapter 1 from Mastering Nova Silver Surfer',
             'course_id' => 1,
             'chapter_id' => $chapter1->id,
         ]);
 
-        $video3 = Video::create([
-            'name' => 'Video 3 / Chapter 2 from Mastering Nova Silver Surfer',
+        $episode3 = Episode::create([
+            'name' => 'Episode 3 / Chapter 2 from Mastering Nova Silver Surfer',
             'course_id' => 1,
             'chapter_id' => $chapter1->id,
         ]);
 
-        $video4 = Video::create([
-            'name' => 'Video 4 / Chapter 2 from Mastering Nova Silver Surfer',
+        $episode4 = Episode::create([
+            'name' => 'Episode 4 / Chapter 2 from Mastering Nova Silver Surfer',
             'course_id' => 1,
             'chapter_id' => $chapter1->id,
         ]);
