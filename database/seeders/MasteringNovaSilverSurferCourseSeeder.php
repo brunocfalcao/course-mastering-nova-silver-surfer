@@ -6,7 +6,6 @@ use Eduka\Cube\Models\Backend;
 use Eduka\Cube\Models\Chapter;
 use Eduka\Cube\Models\Course;
 use Eduka\Cube\Models\Episode;
-use Eduka\Cube\Models\Student;
 use Eduka\Cube\Models\Variant;
 use Illuminate\Database\Seeder;
 
@@ -23,13 +22,6 @@ class MasteringNovaSilverSurferCourseSeeder extends Seeder
         } else {
             $backend = Backend::find(1);
         }
-
-        // Create admin user.
-        $admin = Student::create([
-            'name' => 'Bruno Falcao (SS)',
-            'email' => env('MN_SS_EMAIL'),
-            'password' => bcrypt('password'),
-        ]);
 
         // Create course.
         $course = Course::create([
@@ -51,8 +43,7 @@ class MasteringNovaSilverSurferCourseSeeder extends Seeder
             'prelaunched_at' => now()->subHours(1),
             'launched_at' => now()->addDay(365),
 
-            'admin_email' => env('MN_SS_EMAIL'),
-            'admin_name' => 'Bruno Falcao (SS)',
+            'student_admin_id' => 1,
         ]);
 
         $variant = Variant::create([
