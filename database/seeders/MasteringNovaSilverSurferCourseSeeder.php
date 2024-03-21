@@ -37,7 +37,7 @@ class MasteringNovaSilverSurferCourseSeeder extends Seeder
 
             'lemon_squeezy_store_id' => env('LEMON_SQUEEZY_STORE_ID'),
             'lemon_squeezy_api_key' => env('LEMON_SQUEEZY_API_KEY'),
-            'lemon_squeezy_hash_key' => env('LEMON_SQUEEZY_HASH_KEY'),
+            'lemon_squeezy_hash' => env('LEMON_SQUEEZY_HASH_KEY'),
 
             'twitter_handle' => env('MN_SS_TWITTER'),
             'prelaunched_at' => now()->subHours(1),
@@ -45,6 +45,8 @@ class MasteringNovaSilverSurferCourseSeeder extends Seeder
 
             'student_admin_id' => 1,
         ]);
+
+        return;
 
         $variant = Variant::create([
             'name' => 'Mastering Nova Silver Surfer',
