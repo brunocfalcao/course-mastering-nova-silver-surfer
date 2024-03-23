@@ -46,8 +46,6 @@ class MasteringNovaSilverSurferCourseSeeder extends Seeder
             'student_admin_id' => 1,
         ]);
 
-        return;
-
         $variant = Variant::create([
             'name' => 'Mastering Nova Silver Surfer',
             'canonical' => 'mastering-nova-silver-surfer',
