@@ -20,6 +20,12 @@
     <link href="https://fonts.googleapis.com/css2?family=Titillium+Web:wght@400;700&display=swap" rel="stylesheet">
 
     <!-- Meta / SEO -->
+    @foreach(Nereus::course()->metas as $key => $meta)
+@php
+    $parts = explode('|', $key);
+@endphp
+<meta {{ $parts[0] }}="{{ $parts[1] }}" content="{{ $meta }}" />
+    @endforeach
 
     <!-- JS -->
     @vite('resources/js/app.js')
@@ -40,7 +46,7 @@
 
             <div class="grid grid-cols-1 xs:grid-cols-2 gap-6 mt-10">
                 <div class="relative border-2 border-[#00FFC4] rounded-2xl px-6 pt-8 pb-28 flex flex-col items-center justify-center">
-                    <img class="-mt-1 max-w-full w-64" src="{{ Vite::resource('images/progress/progress-25-resized.png') }}">
+                    <img class="-mt-1 max-w-full w-64" src="{{ Vite::resource('images/progress/progress-' . Nereus::course()->progress . '-resized.png') }}">
                     <h2 class="absolute bottom-8 text-white font-bold text-2xl text-center">Current<br>Progress</h2>
                 </div>
                 <div class="relative border-2 border-[#00FFC4] rounded-2xl px-6 pt-12 pb-32 flex flex-col items-center justify-center">
@@ -50,6 +56,7 @@
             </div>
 
             <div class="mt-10 relative">
+                @if(!isset($message))
                 <form name="notify-me-form" id="notify-me-form" method="POST" action="{{ route('prelaunched.subscribe') }}">
                     @csrf
                     <x-honeypot />
@@ -61,13 +68,19 @@
                             <path d="M19 8.839l-7.77 3.885a2.75 2.75 0 01-2.46 0L1 8.839V14a2 2 0 002 2h14a2 2 0 002-2V8.839z" />
                             </svg>
                         </div>
-                        <input type="email" name="email" required id="email" class="block w-full autofill:bg-[#272E44] autofill:text-cyan-300 rounded-lg border-0 py-4 pl-12 bg-[#272E44] text-cyan-300 placeholder:text-gray-400 focus:outline-none focus:ring-0" placeholder="you@example.com">
+                        <input type="email" name="email" id="email" class="block w-full autofill:bg-[#272E44] autofill:text-cyan-300 rounded-lg border-0 py-4 pl-12 bg-[#272E44] text-cyan-300 placeholder:text-gray-400 focus:outline-none focus:ring-0" placeholder="you@example.com">
                         <button id="notify-me-button-1" type="submit" class="btn-primary-colors px-6 hidden xs:block absolute right-2 top-2 bottom-2">Subscribe</button>
                     </div>
+                    @error('email')
+                    <p id="notify-me-error" class="mt-2 mb-1 text-base text-red-400 font-normal">{{ $message }}</p>
+                    @enderror
+                    <button id="notify-me-button-2" type="submit" class="btn-primary-colors px-6 w-full xs:hidden py-4 mt-2 mx-auto">Notify Me</button>
                 </form>
+                @endif
 
-                <p id="notify-me-success" class="hidden absolute top-1/2 left-0 right-0 bottom-1/2 -translate-y-1/2 text-xl text-white font-normal text-center">Thank you for signing up!</p>
-                <p id="notify-me-error" class="hidden absolute top-1/2 left-0 right-0 bottom-1/2 -translate-y-1/2 text-xl text-red-400 font-normal text-center">There was an error submitting your form. Please try again!</p>
+                @if(isset($message))
+                <p id="notify-me-success" class="absolute top-1/2 left-0 right-0 bottom-1/2 -translate-y-1/2 text-xl text-white font-normal text-center">Thank you for signing up!</p>
+                @endif
                 <div id="notify-me-spinner" role="status" class="hidden  absolute top-1/2 left-0 right-0 bottom-1/2 -translate-y-1/2 w-full items-center justify-center">
                     <svg aria-hidden="true" class="w-8 h-8 text-gray-200 animate-spin dark:text-gray-600 fill-cyan-300" viewBox="0 0 100 101" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M100 50.5908C100 78.2051 77.6142 100.591 50 100.591C22.3858 100.591 0 78.2051 0 50.5908C0 22.9766 22.3858 0.59082 50 0.59082C77.6142 0.59082 100 22.9766 100 50.5908ZM9.08144 50.5908C9.08144 73.1895 27.4013 91.5094 50 91.5094C72.5987 91.5094 90.9186 73.1895 90.9186 50.5908C90.9186 27.9921 72.5987 9.67226 50 9.67226C27.4013 9.67226 9.08144 27.9921 9.08144 50.5908Z" fill="currentColor"/>

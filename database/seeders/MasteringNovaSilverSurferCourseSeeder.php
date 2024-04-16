@@ -39,6 +39,8 @@ class MasteringNovaSilverSurferCourseSeeder extends Seeder
             'lemon_squeezy_api_key' => env('LEMON_SQUEEZY_API_KEY'),
             'lemon_squeezy_hash' => env('LEMON_SQUEEZY_HASH_KEY'),
 
+            'progress' => 25,
+
             'twitter_handle' => env('MN_SS_TWITTER'),
             'prelaunched_at' => now()->subHours(1),
             'launched_at' => now()->addDay(365),

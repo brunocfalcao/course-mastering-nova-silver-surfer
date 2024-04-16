@@ -9,11 +9,10 @@ export default defineConfig({
             input: [
                 'resources/css/app.css',
                 'resources/js/app.js'
-            ],
-            refresh: true,
+            ]
         }),
     ],
     build: {
-        outDir: path.resolve(__dirname, `public/vendor/course-mastering-nova-silver-surfer`),
+        outDir: path.resolve(__dirname, `public/courses/course-mastering-nova-silver-surfer`),
     },
 });
