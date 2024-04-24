@@ -120,7 +120,7 @@
         <source media="(max-width: 799px)" srcset="{{ Vite::resource('images/background-mobile.jpg') }}" />
         <source media="(max-width: 1199px)" srcset="{{ Vite::resource('images/background-hybrid.jpg') }}" />
         <source media="(min-width: 1200px)" srcset="{{ Vite::resource('images/background-desktop.jpg') }}" />
-        <img src="{{ Vite::resource('images/background-desktop.jpg') }}" alt="Background Graphics" class="absolute bottom-0 left-0 right-0 w-full object-cover -z-10">
+        <img src="{{ Vite::resource('images/background-desktop.jpg') }}" alt="Background Graphics" class="opacity-50 absolute bottom-0 left-0 right-0 w-full object-cover -z-10">
     </picture>
 </body>
 </html>

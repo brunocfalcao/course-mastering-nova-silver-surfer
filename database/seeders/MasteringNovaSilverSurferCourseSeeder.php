@@ -41,6 +41,8 @@ class MasteringNovaSilverSurferCourseSeeder extends Seeder
 
             'progress' => 25,
 
+            'clarity_code' => env('MN_SS_CLARITY_CODE'),
+
             'twitter_handle' => env('MN_SS_TWITTER'),
             'prelaunched_at' => now()->subHours(1),
             'launched_at' => now()->addDay(365),
