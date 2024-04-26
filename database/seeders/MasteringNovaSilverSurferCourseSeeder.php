@@ -2,12 +2,13 @@
 
 namespace MasteringNovaSilverSurfer\Database\Seeders;
 
+use Eduka\Cube\Models\Course;
 use Eduka\Cube\Models\Backend;
 use Eduka\Cube\Models\Chapter;
-use Eduka\Cube\Models\Course;
 use Eduka\Cube\Models\Episode;
 use Eduka\Cube\Models\Variant;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\Storage;
 
 class MasteringNovaSilverSurferCourseSeeder extends Seeder
 {
@@ -41,6 +42,8 @@ class MasteringNovaSilverSurferCourseSeeder extends Seeder
 
             'progress' => 25,
 
+            'theme_color' => '#1ba37b',
+
             'clarity_code' => env('MN_SS_CLARITY_CODE'),
 
             'twitter_handle' => env('MN_SS_TWITTER'),
@@ -48,6 +51,23 @@ class MasteringNovaSilverSurferCourseSeeder extends Seeder
             'launched_at' => now()->addDay(365),
 
             'student_admin_id' => 1,
+        ]);
+
+        // Add the 'course' filesystem disk.
+        push_course_filesystem_driver($course);
+
+        // Add twitter and logo images and update course.
+        $twitter = Storage::disk('course')
+                ->putFile(__DIR__.
+                          '/../assets/twitter.jpg');
+
+        $logo = Storage::disk('course')
+                ->putFile(__DIR__.
+                          '/../assets/logo.jpg');
+
+        $course->update([
+            'filename_twitter' => $course->canonical . '/' . $twitter,
+            'filename_logo' => $course->canonical . '/' . $logo
         ]);
 
         $variant = Variant::create([
