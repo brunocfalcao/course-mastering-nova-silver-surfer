@@ -2,9 +2,9 @@
 
 namespace MasteringNovaSilverSurfer\Database\Seeders;
 
-use Eduka\Cube\Models\Course;
 use Eduka\Cube\Models\Backend;
 use Eduka\Cube\Models\Chapter;
+use Eduka\Cube\Models\Course;
 use Eduka\Cube\Models\Episode;
 use Eduka\Cube\Models\Variant;
 use Illuminate\Database\Seeder;
@@ -58,16 +58,16 @@ class MasteringNovaSilverSurferCourseSeeder extends Seeder
 
         // Add twitter and logo images and update course.
         $twitter = Storage::disk('course')
-                ->putFile(__DIR__.
-                          '/../assets/twitter.jpg');
+            ->putFile(__DIR__.
+                      '/../assets/twitter.jpg');
 
         $logo = Storage::disk('course')
-                ->putFile(__DIR__.
-                          '/../assets/logo.jpg');
+            ->putFile(__DIR__.
+                      '/../assets/logo.jpg');
 
         $course->update([
-            'filename_twitter' => $course->canonical . '/' . $twitter,
-            'filename_logo' => $course->canonical . '/' . $logo
+            'filename_twitter' => $course->canonical.'/'.$twitter,
+            'filename_logo' => $course->canonical.'/'.$logo,
         ]);
 
         $variant = Variant::create([
