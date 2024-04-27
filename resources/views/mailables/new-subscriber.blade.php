@@ -116,7 +116,7 @@
                                                 </tr>
                                                 <tr>
                                                     <td align="center" class="center-text">
-                                                        <a href="{{ url($subscriber->course->domain) }}" target="_blank"><img style="width:200px;border:0px;display:inline!important;" src="{{ Storage::disk('public')->url($subscriber->course->filename_logo) }}" width="200" border="0" alt="{{ $subscriber->course->name }}"></a>
+                                                        <a href="{{ url($subscriber->course->domain) }}" target="_blank"><img style="width:100px;border:0px;display:inline!important;" src="{{ Storage::disk('public')->url($subscriber->course->filename_logo) }}" width="100" border="0" alt="{{ $subscriber->course->name }}"></a>
                                                     </td>
                                                 </tr>
                                                 <tr>
