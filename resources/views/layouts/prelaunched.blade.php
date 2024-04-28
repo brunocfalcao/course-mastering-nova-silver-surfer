@@ -34,7 +34,7 @@
     <div class="max-w-7xl mx-auto px-6 sm:px-8 py-6 flex items-center flex-wrap">
         <img src="{{ Vite::file('images/logo-wide.png') }}" class="h-8 hidden sm:block">
         <img src="{{ Vite::file('images/logo.png') }}" class="h-8 block sm:hidden">
-        <button class="ml-auto px-6 py-2 btn-primary-colors">Contact Me</button>
+        <a href="mailto:me@brunofalcao.dev" class="ml-auto px-6 py-2 btn-primary-colors">Contact Me</a>
     </div>
 
     <div class="max-w-7xl mx-auto px-6 py-6 sm:px-8 grid grid-cols-1 lg:grid-cols-2 gap-10">
@@ -95,8 +95,8 @@
     <div class="max-w-7xl mx-auto px-6 py-6 sm:px-8 mt-8 mb-6">
         <div class="w-full h-0.5 bg-gradient-to-r from-transparent via-[#0CFEC7] to-transparent"></div>
         <div class="py-8 flex flex-col lg:flex-row items-center gap-8 lg:gap-16">
-            <h2 class="text-white text-2xl sm:text-3xl font-bold w-full max-w-[48rem] leading-snug text-center lg:text-left">If you bought my previous course, for the Orion version, you can still access it here (the new version is free for you)</h2>
-            <button class="btn-primary-colors px-6 py-4 sm:mx-auto lg:mr-0 lg:ml-auto flex-shrink-0 w-full sm:w-auto">Access Orion Course</button>
+            <h2 class="text-white text-2xl sm:text-3xl font-bold w-full max-w-[48rem] leading-snug text-center lg:text-left">Bought my previous course? This one will be free for you</h2>
+            <a href="https://www.masteringnova.com/login" class="btn-primary-colors px-6 py-4 sm:mx-auto lg:mr-0 lg:ml-auto flex-shrink-0 w-full sm:w-auto">Access Orion Course</a>
         </div>
         <div class="w-full h-0.5 bg-gradient-to-r from-transparent via-[#0CFEC7] to-transparent"></div>
     </div>
@@ -104,9 +104,9 @@
     <div class="max-w-7xl mx-auto px-6 sm:px-8 py-6 flex items-center flex-wrap flex-col md:flex-row">
         <img src="{{ Vite::file('images/logo.png') }}" class="h-8">
         <div class="md:ml-auto flex flex-col md:flex-row  items-center justify-center gap-4 py-4">
-            <a href="#" class="text-white text-lg hover:underline focus:underline">Contact</a>
+            <a href="mailto:me@brunofalcao.dev" class="text-white text-lg hover:underline focus:underline">Contact</a>
             <span class="text-white opacity-75 text-lg hidden md:block">|</span>
-            <a href="#" class="text-white text-lg hover:underline focus:underline">Twitter</a>
+            <a href="https://twitter.com/{{ Nereus::course()->twitter_handle }}" target="_new" class="text-white text-lg hover:underline focus:underline">Twitter</a>
         </div>
     </div>
 
