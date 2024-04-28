@@ -23,7 +23,7 @@
         <meta name="format-detection" content="email=no">
         <!-- disable auto email linking in iOS -->
         <meta name="color-scheme" content="only">
-        <title>Cou cou</title>
+        <title>{{ $subscriber->course->name }}</title>
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
         <style type="text/css">
