@@ -27,8 +27,8 @@
 </head>
 <body class="bg-black relative">
     <div class="max-w-7xl mx-auto px-6 sm:px-8 py-6 flex items-center flex-wrap">
-        <img src="{{ Vite::file('images/logo-wide.png') }}" class="h-8 hidden sm:block">
-        <img src="{{ Vite::file('images/logo.png') }}" class="h-8 block sm:hidden">
+        <img src="{{ Vite::file('images/logo-wide.png') }}" class="h-10 hidden sm:block">
+        <img src="{{ Vite::file('images/logo.png') }}" class="h-10 block sm:hidden">
         <a href="mailto:me@brunofalcao.dev" class="ml-auto px-6 py-2 btn-primary-colors">Contact Me</a>
     </div>
 
