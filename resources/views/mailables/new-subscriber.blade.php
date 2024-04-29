@@ -116,7 +116,7 @@
                                                 </tr>
                                                 <tr>
                                                     <td align="center" class="center-text">
-                                                        <a href="{{ url($subscriber->course->domain) }}" target="_blank"><img style="width:100px;border:0px;display:inline!important;" src="{{ Storage::disk('public')->url($subscriber->course->filename_logo) }}" width="100" border="0" alt="{{ $subscriber->course->name }}"></a>
+                                                        <a href="{{ eduka_url($subscriber->course->domain) }}" target="_blank"><img style="width:100px;border:0px;display:inline!important;" src="{{  eduka_url($subscriber->course->domain, Storage::disk('public')->url($subscriber->course->filename_logo)) }}" width="100" border="0" alt="{{ $subscriber->course->name }}"></a>
                                                     </td>
                                                 </tr>
                                                 <tr>
@@ -168,7 +168,7 @@
                                                                             <tbody>
                                                                                 <tr>
                                                                                     <td align="center">
-                                                                                        <img class="auto-width" style="display:block;width:100%;max-width:140px;border:6px solid {{ $subscriber->course->theme_color }};border-radius:100%;" width="108" src="https://{{ $subscriber->course->domain }}{{ Storage::url($subscriber->course->filename_twitter) }}" border="0" alt="https:://{{ $subscriber->course->domain }}{{ Storage::url($subscriber->course->filename_twitter) }}">
+                                                                                        <img class="auto-width" style="display:block;width:100%;max-width:140px;border:6px solid {{ $subscriber->course->theme_color }};border-radius:100%;" width="108" src="https://{{ eduka_url($subscriber->course->domain, Storage::url($subscriber->course->filename_twitter)) }}" border="0" alt="{{ eduka_url($subscriber->course->domain, Storage::url($subscriber->course->filename_twitter)) }}">
                                                                                     </td>
                                                                                 </tr>
                                                                             </tbody>

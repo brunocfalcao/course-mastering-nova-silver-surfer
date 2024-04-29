@@ -20,12 +20,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Titillium+Web:wght@400;700&display=swap" rel="stylesheet">
 
     <!-- Meta / SEO -->
-    @foreach(Nereus::course()->metas as $key => $meta)
-@php
-    $parts = explode('|', $key);
-@endphp
-<meta {{ $parts[0] }}="{{ $parts[1] }}" content="{{ $meta }}" />
-    @endforeach
+    {!! UI::renderHeaders() !!}
 
     <!-- JS -->
     @vite('resources/js/app.js')
