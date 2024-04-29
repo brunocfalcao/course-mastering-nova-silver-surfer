@@ -61,13 +61,18 @@ class MasteringNovaSilverSurferCourseSeeder extends Seeder
             ->putFile(__DIR__.
                       '/../assets/twitter.jpg');
 
-        $logo = Storage::disk('course')
+        $email = Storage::disk('course')
             ->putFile(__DIR__.
-                      '/../assets/logo.jpg');
+                      '/../assets/email-logo.jpg');
+
+        $main = Storage::disk('course')
+            ->putFile(__DIR__.
+                      '/../assets/seo-logo.jpg');
 
         $course->update([
             'filename_twitter' => $course->canonical.'/'.$twitter,
-            'filename_logo' => $course->canonical.'/'.$logo,
+            'filename_email_logo' => $course->canonical.'/'.$email,
+            'filename_main_logo' => $course->canonical.'/'.$main
         ]);
 
         $variant = Variant::create([
