@@ -168,7 +168,7 @@
                                                                             <tbody>
                                                                                 <tr>
                                                                                     <td align="center">
-                                                                                        <img class="auto-width" style="display:block;width:100%;max-width:140px;border:6px solid {{ $subscriber->course->theme_color }};border-radius:100%;" width="108" src="https:://{{ $subscriber->course->domain }}{{ Storage::url($subscriber->course->filename_twitter) }}" border="0" alt="picture">
+                                                                                        <img class="auto-width" style="display:block;width:100%;max-width:140px;border:6px solid {{ $subscriber->course->theme_color }};border-radius:100%;" width="108" src="https://{{ $subscriber->course->domain }}{{ Storage::url($subscriber->course->filename_twitter) }}" border="0" alt="https:://{{ $subscriber->course->domain }}{{ Storage::url($subscriber->course->filename_twitter) }}">
                                                                                     </td>
                                                                                 </tr>
                                                                             </tbody>
