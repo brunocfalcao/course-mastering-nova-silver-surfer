@@ -72,7 +72,7 @@ class MasteringNovaSilverSurferCourseSeeder extends Seeder
         $course->update([
             'filename_twitter' => $course->canonical.'/'.$twitter,
             'filename_email_logo' => $course->canonical.'/'.$email,
-            'filename_main_logo' => $course->canonical.'/'.$main
+            'filename_main_logo' => $course->canonical.'/'.$main,
         ]);
 
         $variant = Variant::create([
