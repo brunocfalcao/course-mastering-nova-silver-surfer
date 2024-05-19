@@ -3,14 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{ Nereus::course()->name }}</title>
     @vite('resources/css/app.css')
 
     <!-- Favicon -->
-    <link rel="apple-touch-icon" sizes="180x180" href="{{ Vite::file('favicons/apple-touch-icon.png') }} ">
-    <link rel="icon" type="image/png" sizes="32x32" href="{{ Vite::file('favicons/favicon-32x32.png') }}">
-    <link rel="icon" type="image/png" sizes="16x16" href="{{ Vite::file('favicons/favicon-16x16.png') }}">
-    <link rel="mask-icon" href="{{ Vite::file('favicons/safari-pinned-tab.svg') }}" color="#333333">
+    <link rel="apple-touch-icon" sizes="180x180" href="{{ Vite::file('assets/favicons/apple-touch-icon.png') }} ">
+    <link rel="icon" type="image/png" sizes="32x32" href="{{ Vite::file('assets/favicons/favicon-32x32.png') }}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{{ Vite::file('assets/favicons/favicon-16x16.png') }}">
+    <link rel="mask-icon" href="{{ Vite::file('assets/favicons/safari-pinned-tab.svg') }}" color="#333333">
     <meta name="msapplication-TileColor" content="#00aba9">
     <meta name="theme-color" content="#333333">
 
@@ -27,25 +26,25 @@
 </head>
 <body class="bg-black relative">
     <div class="max-w-7xl mx-auto px-6 sm:px-8 py-6 flex items-center flex-wrap">
-        <img src="{{ Vite::file('images/logo-wide.png') }}" class="h-10 hidden sm:block">
-        <img src="{{ Vite::file('images/logo.png') }}" class="h-10 block sm:hidden">
-        <a href="mailto:me@brunofalcao.dev" class="ml-auto px-6 py-2 btn-primary-colors">Contact Me</a>
+        <img src="{{ Vite::file('assets/images/logo-wide.png') }}" class="h-10 hidden sm:block">
+        <img src="{{ Vite::file('assets/images/logo.png') }}" class="h-10 block sm:hidden">
+        <a href="mailto:{{ Nereus::course()->admin->email }}" class="ml-auto px-6 py-2 btn-primary-colors">Contact Me</a>
     </div>
 
     <div class="max-w-7xl mx-auto px-6 py-6 sm:px-8 grid grid-cols-1 lg:grid-cols-2 gap-10">
         <div class="bg-[#272e44] relative rounded-2xl overflow-hidden hidden lg:block">
-            <img class="absolute top-0 left-0 right-0 bottom-0 w-full h-full object-cover" src="{{ Vite::file('images/showcase-cropped.jpg') }}">
+            <img class="absolute top-0 left-0 right-0 bottom-0 w-full h-full object-cover" src="{{ Vite::file('assets/images/showcase-cropped.jpg') }}">
         </div>
         <div>
             <h1 class="text-white text-4xl sm:text-5xl font-bold leading-snug sm:leading-snug">Suit up like an Astronaut, and master Laravel Nova for out-of-this-world projects</h1>
 
             <div class="grid grid-cols-1 xs:grid-cols-2 gap-6 mt-10">
                 <div class="relative border-2 border-[#00FFC4] rounded-2xl px-6 pt-8 pb-28 flex flex-col items-center justify-center">
-                    <img class="-mt-1 max-w-full w-64" src="{{ Vite::file('images/progress/progress-' . Nereus::course()->progress . '-resized.png') }}">
+                    <img class="-mt-1 max-w-full w-64" src="{{ Vite::file('assets/images/progress/progress-' . Nereus::course()->progress . '-resized.png') }}">
                     <h2 class="absolute bottom-8 text-white font-bold text-2xl text-center">Current<br>Progress</h2>
                 </div>
                 <div class="relative border-2 border-[#00FFC4] rounded-2xl px-6 pt-12 pb-32 flex flex-col items-center justify-center">
-                    <img src="{{ Vite::file('images/launch-date.svg') }}" class="max-w-[80%] w-40">
+                    <img src="{{ Vite::file('assets/images/launch-date.svg') }}" class="max-w-[80%] w-40">
                     <h2 class="absolute bottom-8 text-white font-bold text-2xl text-center mt-8">Estimated<br>Launch Date</h2>
                 </div>
             </div>
@@ -97,7 +96,7 @@
     </div>
 
     <div class="max-w-7xl mx-auto px-6 sm:px-8 py-6 flex items-center flex-wrap flex-col md:flex-row">
-        <img src="{{ Vite::file('images/logo.png') }}" class="h-8">
+        <img src="{{ Vite::file('assets/images/logo.png') }}" class="h-8">
         <div class="md:ml-auto flex flex-col md:flex-row  items-center justify-center gap-4 py-4">
             <a href="mailto:me@brunofalcao.dev" class="text-white text-lg hover:underline focus:underline">Contact</a>
             <span class="text-white opacity-75 text-lg hidden md:block">|</span>
@@ -112,10 +111,10 @@
     </button>
 
     <picture>
-        <source media="(max-width: 799px)" srcset="{{ Vite::file('images/background-mobile.jpg') }}" />
-        <source media="(max-width: 1199px)" srcset="{{ Vite::file('images/background-hybrid.jpg') }}" />
-        <source media="(min-width: 1200px)" srcset="{{ Vite::file('images/background-desktop.jpg') }}" />
-        <img src="{{ Vite::file('images/background-desktop.jpg') }}" alt="Background Graphics" class="opacity-50 absolute bottom-0 left-0 right-0 w-full object-cover -z-10">
+        <source media="(max-width: 799px)" srcset="{{ Vite::file('assets/images/background-mobile.jpg') }}" />
+        <source media="(max-width: 1199px)" srcset="{{ Vite::file('assets/images/background-hybrid.jpg') }}" />
+        <source media="(min-width: 1200px)" srcset="{{ Vite::file('assets/images/background-desktop.jpg') }}" />
+        <img src="{{ Vite::file('assets/images/background-desktop.jpg') }}" alt="Background Graphics" class="opacity-50 absolute bottom-0 left-0 right-0 w-full object-cover -z-10">
     </picture>
 </body>
 </html>

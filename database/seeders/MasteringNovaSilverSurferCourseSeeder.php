@@ -2,10 +2,11 @@
 
 namespace MasteringNovaSilverSurfer\Database\Seeders;
 
+use Eduka\Cube\Models\Course;
 use Eduka\Cube\Models\Backend;
 use Eduka\Cube\Models\Chapter;
-use Eduka\Cube\Models\Course;
 use Eduka\Cube\Models\Episode;
+use Eduka\Cube\Models\Student;
 use Eduka\Cube\Models\Variant;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\Storage;
@@ -71,6 +72,16 @@ class MasteringNovaSilverSurferCourseSeeder extends Seeder
             'course_id' => $course->id,
             'lemon_squeezy_variant_id' => env('MNSS_VARIANT_ID'),
         ]);
+
+        // Lets simulate someone that bought the course.
+        $buyer = Student::create([
+            'name' => env('MNSS_BUYER_NAME'),
+            'email' => env('MNSS_BUYER_EMAIL'),
+            'password' => bcrypt(env('MNSS_BUYER_PASSWORD'))
+        ]);
+
+        // Add buyer to course.
+        $buyer->courses()->attach($course->id);
 
         // Now, lets create some chapters, series and episodes.
         $chapter1 = Chapter::create([

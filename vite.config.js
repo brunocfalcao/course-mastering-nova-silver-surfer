@@ -13,6 +13,6 @@ export default defineConfig({
         }),
     ],
     build: {
-        outDir: path.resolve(__dirname, `public/courses/course-mastering-nova-silver-surfer`),
+        outDir: path.resolve(__dirname, `public/vendor/course-mastering-nova-silver-surfer`),
     },
 });
