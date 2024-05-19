@@ -14,27 +14,16 @@ class MasteringNovaSilverSurferCourseSeeder extends Seeder
 {
     public function run()
     {
-        if (! Backend::exists()) {
-            $backend = Backend::create([
-                'name' => 'brunofalcao.dev',
-                'domain' => env('EDUKA_BACKEND_URL'),
-                'provider_namespace' => '\Eduka\Dev\DevServiceProvider',
-            ]);
-        } else {
-            $backend = Backend::find(1);
-        }
+        $backend = Backend::firstWhere('name', 'brunofalcao.dev');
 
         // Create course.
         $course = Course::create([
             'name' => 'Mastering Nova - Silver Surfer',
             'description' => 'Course to learn Laravel Nova - Silver surfer version',
             'canonical' => 'course-mastering-nova-silver-surfer',
-            'domain' => env('MN_SS_DOMAIN'),
+            'domain' => env('MNSS_DOMAIN'),
             'provider_namespace' => 'MasteringNovaSilverSurfer\\MasteringNovaSilverSurferServiceProvider',
-            'backend_id' => 1,
-
-            //'vimeo_folder_id' => env('MN_SS_COURSE_VIMEO_FOLDER_ID'),
-            //'vimeo_uri' => env('MN_SS_COURSE_VIMEO_URI'),
+            'backend_id' => $backend->id,
 
             'lemon_squeezy_store_id' => env('LEMON_SQUEEZY_STORE_ID'),
             'lemon_squeezy_api_key' => env('LEMON_SQUEEZY_API_KEY'),
@@ -44,9 +33,9 @@ class MasteringNovaSilverSurferCourseSeeder extends Seeder
 
             'theme_color' => '#1ba37b',
 
-            'clarity_code' => env('MN_SS_CLARITY_CODE'),
+            'clarity_code' => env('MNSS_CLARITY_CODE'),
 
-            'twitter_handle' => env('MN_SS_TWITTER'),
+            'twitter_handle' => env('MNSS_TWITTER'),
             'prelaunched_at' => now()->subHours(1),
             'launched_at' => now()->addDay(365),
 
@@ -80,7 +69,7 @@ class MasteringNovaSilverSurferCourseSeeder extends Seeder
             'canonical' => 'mastering-nova-silver-surfer',
             'description' => 'Mastering Nova Silver Surfer (standard version)',
             'course_id' => $course->id,
-            'lemon_squeezy_variant_id' => env('MN_SS_VARIANT_ID'),
+            'lemon_squeezy_variant_id' => env('MNSS_VARIANT_ID'),
         ]);
 
         // Now, lets create some chapters, series and episodes.
