@@ -2,9 +2,9 @@
 
 namespace MasteringNovaSilverSurfer\Database\Seeders;
 
-use Eduka\Cube\Models\Course;
 use Eduka\Cube\Models\Backend;
 use Eduka\Cube\Models\Chapter;
+use Eduka\Cube\Models\Course;
 use Eduka\Cube\Models\Episode;
 use Eduka\Cube\Models\Student;
 use Eduka\Cube\Models\Variant;
@@ -77,7 +77,7 @@ class MasteringNovaSilverSurferCourseSeeder extends Seeder
         $buyer = Student::create([
             'name' => env('MNSS_BUYER_NAME'),
             'email' => env('MNSS_BUYER_EMAIL'),
-            'password' => bcrypt(env('MNSS_BUYER_PASSWORD'))
+            'password' => bcrypt(env('MNSS_BUYER_PASSWORD')),
         ]);
 
         // Add buyer to course.
@@ -124,5 +124,9 @@ class MasteringNovaSilverSurferCourseSeeder extends Seeder
             'course_id' => 1,
             'chapter_id' => $chapter1->id,
         ]);
+
+        // Add user to course.
+        Student::firstWhere('email', 'pedro.morgado@live.com')
+            ->courses()->attach($course->id);
     }
 }
