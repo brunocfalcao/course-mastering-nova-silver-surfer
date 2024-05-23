@@ -1,18 +1,16 @@
 import { defineConfig } from 'vite';
 import laravel from 'laravel-vite-plugin';
 import path from 'path';
-import fs from 'fs';
+import fg from 'fast-glob';
 
 export default defineConfig({
     plugins: [
-        laravel({
-            input: [
-                'resources/css/app.css',
-                'resources/js/app.js'
-            ]
-        }),
+        laravel(fg.sync([
+            'resources/css/**/*.css',
+            'resources/js/**/*.js'
+        ])),
     ],
     build: {
-        outDir: path.resolve(__dirname, `public/courses/course-mastering-nova-silver-surfer`),
+        outDir: path.resolve(__dirname, 'public/vendor/course-beyond-project-management'),
     },
 });

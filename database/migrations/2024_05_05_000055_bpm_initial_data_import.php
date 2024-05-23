@@ -3,12 +3,12 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Support\Facades\Artisan;
 
-class CourseInitialDataImport extends Migration
+class BpmInitialDataImport extends Migration
 {
     public function up()
     {
         Artisan::call('db:seed', [
-            '--class' => 'MasteringNovaSilverSurfer\Database\Seeders\MasteringNovaSilverSurferCourseSeeder',
+            '--class' => 'BeyondProjectManagement\Database\Seeders\BeyondProjectManagementCourseSeeder',
             '--force' => true,
         ]);
     }
