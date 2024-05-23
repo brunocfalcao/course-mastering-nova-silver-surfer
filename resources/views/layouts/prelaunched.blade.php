@@ -27,7 +27,6 @@
         <h1 class="text-4xl font-bold mb-6">{{ Nereus::course()->name }}</h1>
 
         <div class="p-6 rounded-lg bg-gray-800 bg-opacity-80">
-
             @isset($message)
                 {{ $message }}
             @else
