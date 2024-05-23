@@ -1,10 +1,10 @@
 {
-    "name": "brunocfalcao/course-beyond-project-management",
-    "description": "Course Beyond Project Management",
+    "name": "brunocfalcao/course-mastering-nova-silver-surfer",
+    "description": "Course Mastering Nova Silver Surfer",
     "keywords": [
         "brunocfalcao"
     ],
-    "homepage": "https://github.com/brunocfalcao/course-beyond-project-management",
+    "homepage": "https://github.com/brunocfalcao/course-mastering-nova-silver-surfer",
     "license": "MIT",
     "type": "library",
     "authors": [
@@ -21,8 +21,8 @@
     },
     "autoload": {
         "psr-4": {
-            "BeyondProjectManagement\\": "src/",
-            "BeyondProjectManagement\\Database\\Seeders\\": "database/seeders/"
+            "MasteringNovaSilverSurfer\\": "src/",
+            "MasteringNovaSilverSurfer\\Database\\Seeders\\": "database/seeders/"
         }
     },
     "config": {

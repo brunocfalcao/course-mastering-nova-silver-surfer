@@ -1,10 +1,10 @@
 <?php
 
-namespace BeyondProjectManagement;
+namespace MasteringNovaSilverSurfer;
 
 use Eduka\Abstracts\Classes\EdukaServiceProvider;
 
-class BeyondProjectManagementServiceProvider extends EdukaServiceProvider
+class MasteringNovaSilverSurferServiceProvider extends EdukaServiceProvider
 {
     public function boot()
     {
