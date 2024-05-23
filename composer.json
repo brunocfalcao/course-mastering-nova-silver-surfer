@@ -17,7 +17,7 @@
     "require": {
         "php": "^8.2",
         "brunocfalcao/eduka-nereus": "dev-master",
-        "brunocfalcao/backend-brunofalcao-pro": "dev-master"
+        "brunocfalcao/backend-brunofalcao-dev": "dev-master"
     },
     "autoload": {
         "psr-4": {
