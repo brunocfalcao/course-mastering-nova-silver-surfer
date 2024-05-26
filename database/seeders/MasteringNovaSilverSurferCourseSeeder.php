@@ -32,8 +32,6 @@ class MasteringNovaSilverSurferCourseSeeder extends Seeder
 
             'progress' => 25,
 
-            'theme_color' => '#1ba37b',
-
             'clarity_code' => env('MNSS_CLARITY_CODE'),
 
             'twitter_handle' => env('MNSS_TWITTER'),
