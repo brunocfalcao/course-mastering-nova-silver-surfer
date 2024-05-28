@@ -11,6 +11,6 @@ export default defineConfig({
         ])),
     ],
     build: {
-        outDir: path.resolve(__dirname, 'public/vendor/course-beyond-project-management'),
+        outDir: path.resolve(__dirname, 'public/vendor/course-mastering-nova-silver-surfer'),
     },
 });
