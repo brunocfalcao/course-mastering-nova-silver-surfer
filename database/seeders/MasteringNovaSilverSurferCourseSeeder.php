@@ -32,6 +32,12 @@ class MasteringNovaSilverSurferCourseSeeder extends Seeder
 
             'progress' => 25,
 
+            'theme' => [
+                'primary-color' => '#1338BE',
+                'secondary-color' => '#10414a',
+                'danger-color' => '#23dafc',
+            ],
+
             'clarity_code' => env('MNSS_CLARITY_CODE'),
 
             'twitter_handle' => env('MNSS_TWITTER'),
@@ -60,7 +66,7 @@ class MasteringNovaSilverSurferCourseSeeder extends Seeder
         $course->update([
             'filename_twitter' => $course->canonical.'/'.$twitter,
             'filename_email_logo' => $course->canonical.'/'.$email,
-            'filename_main_logo' => $course->canonical.'/'.$main,
+            'filename_email_logo' => $course->canonical.'/'.$main,
         ]);
 
         $variant = Variant::create([
