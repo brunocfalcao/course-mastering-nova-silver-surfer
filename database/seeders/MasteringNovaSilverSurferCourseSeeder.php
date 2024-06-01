@@ -48,25 +48,19 @@ class MasteringNovaSilverSurferCourseSeeder extends Seeder
         ]);
 
         // Add the 'course' filesystem disk.
-        push_course_filesystem_driver($course);
+        push_eduka_filesystem_disk($course);
 
         // Add twitter and logo images and update course.
-        $twitter = Storage::disk('course')
+        $twitter = Storage::disk('eduka')
             ->putFile(__DIR__.
                       '/../assets/twitter.jpg');
 
-        $email = Storage::disk('course')
+        $email = Storage::disk('eduka')
             ->putFile(__DIR__.
                       '/../assets/email-logo.jpg');
 
-        $main = Storage::disk('course')
-            ->putFile(__DIR__.
-                      '/../assets/seo-logo.jpg');
-
         $course->update([
-            'filename_twitter' => $course->canonical.'/'.$twitter,
-            'filename_email_logo' => $course->canonical.'/'.$email,
-            'filename_email_logo' => $course->canonical.'/'.$main,
+            'filename_email_logo' => $email,
         ]);
 
         $variant = Variant::create([
