@@ -25,6 +25,7 @@ class MasteringNovaSilverSurferCourseSeeder extends Seeder
             'domain' => env('MNSS_DOMAIN'),
             'provider_namespace' => 'MasteringNovaSilverSurfer\\MasteringNovaSilverSurferServiceProvider',
             'backend_id' => $backend->id,
+            'clarity_code' => env('MNSS_CLARITY_CODE'),
 
             'lemon_squeezy_store_id' => env('LEMON_SQUEEZY_STORE_ID'),
             'lemon_squeezy_api_key' => env('LEMON_SQUEEZY_API_KEY'),
