@@ -123,9 +123,5 @@ class MasteringNovaSilverSurferCourseSeeder extends Seeder
             'course_id' => 1,
             'chapter_id' => $chapter1->id,
         ]);
-
-        // Add user to course.
-        Student::firstWhere('email', 'pedro.morgado@live.com')
-            ->courses()->attach($course->id);
     }
 }
