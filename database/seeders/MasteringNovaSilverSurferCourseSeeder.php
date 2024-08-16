@@ -23,7 +23,8 @@ class MasteringNovaSilverSurferCourseSeeder extends Seeder
             'description' => 'Course to learn Laravel Nova - Silver surfer version',
             'canonical' => 'course-mastering-nova-silver-surfer',
             'domain' => env('MNSS_DOMAIN'),
-            'provider_namespace' => 'MasteringNovaSilverSurfer\\MasteringNovaSilverSurferServiceProvider',
+            'payments_gateway_class' => 'Eduka\Payments\PaymentProviders\Paddle\Paddle',
+            'service_provider_class' => 'MasteringNovaSilverSurfer\\MasteringNovaSilverSurferServiceProvider',
             'backend_id' => $backend->id,
             'clarity_code' => env('MNSS_CLARITY_CODE'),
 
@@ -61,7 +62,7 @@ class MasteringNovaSilverSurferCourseSeeder extends Seeder
                       '/../assets/email-logo.jpg');
 
         $course->update([
-            'filename_email_logo' => $email,
+            'filename_logo' => $email,
         ]);
 
         $variant = Variant::create([
@@ -69,7 +70,7 @@ class MasteringNovaSilverSurferCourseSeeder extends Seeder
             'canonical' => 'mastering-nova-silver-surfer',
             'description' => 'Mastering Nova Silver Surfer (standard version)',
             'course_id' => $course->id,
-            'lemon_squeezy_variant_id' => env('MNSS_VARIANT_ID'),
+            'product_id' => env('MNSS_VARIANT_ID'),
         ]);
 
         // Lets simulate someone that bought the course.
