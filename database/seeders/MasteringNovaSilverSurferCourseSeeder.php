@@ -9,7 +9,6 @@ use Eduka\Cube\Models\Episode;
 use Eduka\Cube\Models\Student;
 use Eduka\Cube\Models\Variant;
 use Illuminate\Database\Seeder;
-use Illuminate\Support\Facades\Storage;
 
 class MasteringNovaSilverSurferCourseSeeder extends Seeder
 {
@@ -51,19 +50,6 @@ class MasteringNovaSilverSurferCourseSeeder extends Seeder
 
         // Add the 'course' filesystem disk.
         push_canonical_filesystem_disk($course->canonical);
-
-        // Add twitter and logo images and update course.
-        $twitter = Storage::disk($course->canonical)
-            ->putFile(__DIR__.
-                      '/../assets/twitter.jpg');
-
-        $email = Storage::disk($course->canonical)
-            ->putFile(__DIR__.
-                      '/../assets/email-logo.jpg');
-
-        $course->update([
-            'filename_logo' => $email,
-        ]);
 
         $variant = Variant::create([
             'name' => 'Mastering Nova Silver Surfer',
