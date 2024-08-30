@@ -102,13 +102,13 @@ class MasteringNovaSilverSurferCourseSeeder extends Seeder
         $episode3 = Episode::create([
             'name' => 'Episode 3 / Chapter 2 from Mastering Nova Silver Surfer',
             'course_id' => 1,
-            'chapter_id' => $chapter1->id,
+            'chapter_id' => $chapter2->id,
         ]);
 
         $episode4 = Episode::create([
             'name' => 'Episode 4 / Chapter 2 from Mastering Nova Silver Surfer',
             'course_id' => 1,
-            'chapter_id' => $chapter1->id,
+            'chapter_id' => $chapter2->id,
         ]);
     }
 }
